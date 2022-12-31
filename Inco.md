@@ -429,7 +429,31 @@ Polynoms und der Länge der Daten.
 
 ## Blockcodes mit Generator-und Paritycheckmatrix, Syndrom 
 
+$$
 
+\underset{Daten-u}{
+\begin{bmatrix}
+0 & 1 & 0 & 1
+\end{bmatrix}
+}
+\cdot
+\underset{Generatormatrix-G}{
+\begin{bmatrix}
+{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 0}  &{\color{Green} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 0} \\ 
+{\color{DarkOrange} 0} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 1}  &{\color{Green} 0}  &{\color{Green} 0} \\ 
+{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 1}  &{\color{Green} 0} \\ 
+{\color{DarkOrange} 1} &{\color{DarkOrange} 0}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 1} 
+\end{bmatrix}
+}
+=
+\underset{Codewort-c_{10}}{
+\begin{bmatrix}
+{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 0 & 1
+\end{bmatrix}
+} 
+
+
+$$
 
 
 
