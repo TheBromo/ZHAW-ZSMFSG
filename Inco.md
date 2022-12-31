@@ -431,6 +431,8 @@ Polynoms und der Länge der Daten.
 
 
 
+
+
 ## Faltungscodes (Trellis)
 
 
