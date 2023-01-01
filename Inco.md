@@ -531,4 +531,14 @@ $$
 
 ## Faltungscodes (Trellis)
 
+Bei Faltungscodes spricht man nicht von minimaler Hamming-Distanz,
+sondern einer freien Distanz $d_{free}$ (free distance).
+* Da Faltungscodes stets linear sind, gilt auch $d_{free} = w_{min}$
+* Gesucht ist das Codewort, das die minimale Anzahl Einer enthält (aber mindestens eine).
 
+Regel: Es können $\frac{d_{free}-1}{2}$ Fehler korrigiert werden auf N = 3 … 6 ∗ m Bits
+
+### Übersicht
+![Ablauf](./inco_files/Screenshot%20from%202023-01-01%2015-56-28.png){ width=100% }
+![Ohne Fehler](./inco_files/ohne-fehler-trellis.png){ width=50% }
+![Mit Fehler](./inco_files/MitFehlerTrellis.png){ width=50% }
