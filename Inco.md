@@ -429,6 +429,13 @@ Polynoms und der Länge der Daten.
 
 ## Blockcodes mit Generator-und Paritycheckmatrix, Syndrom 
 
+### Encoding
+
+> Durch Multiplikation des
+> Datenvektors $u$ mit der
+> Generatormatrix $G$ wird
+> das Codewort $c_{10}$ erzeugt.  
+
 $$
 
 \underset{Daten-u}{
@@ -455,7 +462,72 @@ $$
 
 $$
 
+> Bei der Übertragung von $c_{10}$ gilt die
+> Annahme, dass maximal ein Bitfehler
+> auftritt. Der Fehlervektor $e$ darf also
+> keine oder genau eine 1 enthalten.
 
+$$\underset{Codewort-c_{10}}{
+\begin{bmatrix}
+{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 0 & 1
+\end{bmatrix}}
++
+{\color{Red} 
+\underset{Fehlervektor-e}{
+\begin{bmatrix}
+0 &0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}}}
+=
+\underset{Bitmuster-Empfangen-\widetilde{c}}{
+\begin{bmatrix}
+{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 1 & 1
+\end{bmatrix}}$$
+
+### Decoding
+>Durch Multiplikation des empfangenen
+>Bitmusters $\widetilde{c}$ mit der Prüfmatrix wird das
+>Syndrom bestimmt:
+> * s = 000: Kein Fehler
+> * s ≠ 000: Der Index von s in der Prüfmatrix $H^{T}$ ist die Position des zu korrigierenden Fehlers. 
+$$
+\underset{Bitmuster-Empfangen-\widetilde{c}}{
+\begin{bmatrix}
+{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 1 & 1
+\end{bmatrix}}
+\; 
+\cdot 
+\;
+\underset{Prüfmatrix-H^{T}}{
+\begin{bmatrix}
+{\color{Green}1} &{\color{Green}0}  &{\color{Green}0} \\ 
+{\color{Green}0} & {\color{Green}1} &{\color{Green}0} \\ 
+{\color{Green}0} &{\color{Green}0}  &{\color{Green}1} \\ 
+{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 0} \\ 
+{\color{DarkOrange} 0} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1} \\ 
+{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1} \\ 
+{\color{DarkOrange} 1} &{\color{DarkOrange} 0}  &{\color{DarkOrange} 1} 
+\end{bmatrix}}
+
+=
+
+\underset{Syndrom-s}{
+\begin{bmatrix}
+ 1&1  &1 
+\end{bmatrix}
+}$$
+![Indexes vom Syndrom](./inco_files/Screenshot%20from%202023-01-01%2015-29-00.png){ width=50% }
+![Korrektur](./inco_files/Screenshot%20from%202023-01-01%2015-31-00.png){ width=50% }
+
+### Erstellen Generator / Paritycheck Matrix
+
+* Die Generatormatrix setzt sich wie erwähnt zusammen aus der Paritätsmatrix und einer Einheitsmatrix.
+* Die Paritätsbits müssen voneinander unabhängig sein; jede Spalte muss unterschiedlich sein.
+* Der Code ist linear. Für die geforderte $d_{min}=3$ muss jeder Code (ausserdem Null-Code) mindestens 3 Einsen enthalten.
+  - Mindestens eine Eins ist stets in der Einheitsmatrix
+  - Jede Zeile der Paritätsmatrix muss mindestens 2 Einsen aufweisen
+  - Ein Datenbit wird also stets von mindestens 2 Paritätsbits gesichert. 
+
+![Bildung Matrix](./inco_files/Screenshot%20from%202023-01-01%2015-37-03.png){ width=50% }
 
 ## Faltungscodes (Trellis)
 
