@@ -16,8 +16,8 @@ Diese neue Funktion heisst Komposition von f und g. (Andere Bezeichnungen: Verke
 
 ## Summenzeichen
 
-$$a_{1} + a_{2} + a_{3} + \cdots + a_{n} = \sum_{k=1}^{n}a_{k}$$
-$$a_{s} + a_{s+1} + a_{s+2} + \cdots + a_{n} = \sum_{k=s}^{n}a_{k}$$
+$a_{1} + a_{2} + a_{3} + \cdots + a_{n} = \sum_{k=1}^{n}a_{k}$
+$a_{s} + a_{s+1} + a_{s+2} + \cdots + a_{n} = \sum_{k=s}^{n}a_{k}$
 
 ## Begriff des Polynoms, Eigenschaften von Polynomen
 ### Definition
@@ -81,15 +81,27 @@ Beispiel Im Polynom $f(x) = (x-1)(x + 3)(x-8)^{2}(x-6)^{3}$ ist 8 eine doppelte 
 | Ableitung                              |Tangentensteigung              |Momentangeschwindigkeit              |
 +----------------------------------------+-------------------------------+-------------------------------------+
 
-> Die Funktion, die jeder Stelle $x$ den Wert $f′(x)$ zuordnet, wird Ableitungsfunktion von $f$ genannt
+> Die Funktion, die jeder Stelle $x$ den Wert $f'(x)$ zuordnet, wird Ableitungsfunktion von $f$ genannt
 
 Schreibweisen: $f'(x),\frac{\mathrm{d} f}{\mathrm{d} x},\frac{\mathrm{d} y}{\mathrm{d} x}$
 
-Gegeben ist die Funktion $f(x) = x^{k}$ mit $k \neq 0$. Dann gilt: $f′(x) = k \cdot x^{k−1}$
-
-
+Gegeben ist die Funktion $f(x) = x^{k}$ mit $k \neq 0$. Dann gilt: $f'(x) = k \cdot x^{k-1}$
 
 ## Stammfunktion und Hauptsatz
+
+## Integral
+Illustration Ein Integral kann man sich (bei eindimensionalen Funktionen) als Fläche unter
+einem Kurvenstück vorstellen.
+
+![Visualisierung Integral berechnung](./ana-files/Screenshot%202023-01-02%20221904.png){ width=100% }
+
+Schreibweise: $\int_{b}^{a}f(x)dx$ 
+
+Integral ermöglich es uns die Fläche eines graphen nicht annähern zu müssen.
+
+
+
+
 
 # Folgen und Reihen
 
@@ -105,8 +117,51 @@ Gegeben ist die Funktion $f(x) = x^{k}$ mit $k \neq 0$. Dann gilt: $f′(x) = k 
 
 ## Ableitungsregeln
 
+**Faktorregel:** $(c \cdot f)'(x) = c \cdot f'(x)$
+
+**Summenregel:** $(f+g)'(x) = f'(x) + g'(x)$
+
+**Produktregel:** $(u \cdot v)'(x) = u'(x) \cdot v(x) + u(x) \cdot v'(x)$
+
+**Quotientenregel:** $\left ( \frac{u}{v} \right )' (x) = \frac{u'(x)\cdot v(x)-u(x)\cdot v'(x)}{(v(x))^{2}}$
+
+**Kettenregel** $(F \circ u)'(x) = F'(u) \cdot  u'(x)$
+
+$F(u)$: äussere Funktion    $F'(u)=\frac{dF(u)}{du}$    Ableitung der äusseren Funktion nach $u$
+
+$u(x)$: äussere Funktion    $u'(x)=\frac{du(x)}{dx}$    Ableitung der inneren Funktion nach $x$
+
+**Ableitung bestimmter Funktionen**
+
+* $(\sin(x))' = \cos(x)$
+* $(\cos(x))' = -\sin(x)$ 
+* $(e^{x})' = e^{x}$ 
+* $(a^{x})' = a^{x} \cdot \ln(a)$
+* $(\ln(x))' = \frac{1}{x}$
+* $(\log_{a}(x))'=\frac{1}{x\cdot \ln (a)}$
+
 ## Kurvendiskussion
 
 ## Extremwertaufgaben
 
-## Newton-Verfahren
+## Newton-Näherungs-Verfahren
+
+Die entsprechende Stelle $x_{1}$ liegt (im Vergleich zu $x_{0}$ ) in vielen Fällen schon ein Stück näher bei
+der gesuchten Lösung. Als nächstes betrachten wir die Tangente beim Punkt ( $x_{1}$ , $y_{1}$). Diese
+schneidet die x-Achse an der Stelle $x_{2}$, welche uns in der Regel noch ein bisschen näher zur
+Lösung bringt. Dieses Verfahren wiederholen wir, bis wir die Lösung $z$ mit der gewünschten
+Genauigkeit bestimmt haben.
+
+$$x_{n+1} = x_{n}-\frac{f(x_{n})}{f'(x_{n})}$$
+
+![Visualisierung Newton-Verfahren ](./ana-files/Screenshot%202023-01-02%20210143.png){ width=50% }
+
+Beispiel:
+$f(x) = x^{3} + 5x - 4$
+
+$f'(x) = 3x^{2} + 5$
+
+![Beispiel Newton-Verfahren ](./ana-files/Screenshot%202023-01-02%20210839.png){ width=50% }
+
+> Startet man das Newton-Verfahren mit einem Wert x0 in der Nähe eines Fixpunktes, so strebt das Verfahren gegen diesen Fixpunkt.
+
