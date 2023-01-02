@@ -213,7 +213,7 @@ $$H_{b} = p\cdot \log_{2}\frac{1}{p}+ (1-p) \cdot \log_{2}\frac{1}{1-p}$$
 Entropie: 
 $$H(X) = \sum_{n=0}^{N-1}P(x_{n})\cdot I(x_{n})$$
 
-Mittlere Länge der Codiuerung $l_{n} = $ länge der Codes:
+Mittlere Länge der Codiuerung $l_{n} =$ länge der Codes:
 
 $$L = \sum_{n=0}^{N-1}P(x_{n})\cdot l_{n}$$
 
