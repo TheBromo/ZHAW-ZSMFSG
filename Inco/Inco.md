@@ -27,18 +27,7 @@ Binärsystem oder Dualsystem
 Bit (binary digit)      Speicher 0/1 (True/False)       
 Byte (Octet)            8 Bit oder 2 Nibble a 4 Bit     
 
-**Grössen NICHT EINDEUTIG DEFINIERT**
-
-  Name                  Speicher                        
--------                 ------                   
-Word                    16 Bit                       
-Double Word             2 Word, 32 Bit                  
-Quadword                4 Word, 64 Bit
-Octaword                8 Word, 128 Bit
-
-
-
-### hexadezimal
+### Hexadezimal
 
 Das Zahlensystem mit der Basis 16 heisst 16-er System
 oder Hexadezimalsystem.
@@ -87,16 +76,12 @@ Folgende Probleme können auftreten:
 * Bei vorzeichenbehafteten Zahlen passieren Überläufe zwischen der grössten positiven und der kleinsten negativen Zahl.
 * Bei Überläufen kann ein falsches Resultat entstehen, wenn das betreffende Überlaufsflag (Carry, Overflow) nicht beachtet wird (was der Normalfall ist).
 
-## Negative Zahlen(2-er Komplement)
+## Negative Zahlen(2-er Komplement) & Endliche Zahlen(Fixe Anzahl Bit und Modulo Rechnung)
 
 Hierbei geht es darum wo der Umschlagspubkt im Format definiert wurde. (Hier 4 Bit's)
 Hier ein paar Möglichkeiten:
 
 ![Darstellung negativer Zahlen](./inco_files/Screenshot%202022-12-29%20213055.png){ width=50% }
-
-
-## Endliche Zahlen(Fixe Anzahl Bit und Modulo Rechnung)
-
 ![Signed und Unsigned Bits](./inco_files/Screenshot%202022-12-29%20213650.png){ width=50% }
 
 
@@ -108,12 +93,8 @@ Hier ein paar Möglichkeiten:
 
 ### Einfache logische Operationen
 
-**Inverter**
-**$$Z = !A$$**
-**Buffer**
-**$$Z = A$$**
-
-
+**Inverter:** $Z = !A$
+**Buffer:** $Z = A$
 ![Inverter Gate](./inco_files/Screenshot%202022-12-30%20112012.png){ width=20% }
 ![Buffer Gate](./inco_files/Screenshot%202022-12-30%20112216.png){ width=20% }
 
@@ -123,18 +104,11 @@ A $$!A$$
 0 1     
 1 0
 
----
-
-**AND**
-**$$Z = A \& B$$**
-**OR**
-**$$Z = A \# B$$**
-**NAND**
-**$$Z = !(A \& B)$$**
-**NOR**
-**$$Z = !(A \# B)$$**
-**EXOR**
-**$$Z = A \$ B$$**
+**AND:** $Z = A \& B$
+**OR:** $Z = A \# B$
+**NAND:** $Z = !(A \& B)$
+**NOR:** $Z = !(A \# B)$
+**EXOR:** $Z = A \$ B$
 
 ![AND Gate](./inco_files/Screenshot%202022-12-30%20112753.png){ width=20% }
 ![OR Gate](./inco_files/Screenshot%202022-12-30%20113025.png){ width=20% }
@@ -185,13 +159,6 @@ $$ Z = (A \& B \& C \& D) \# (A \& B \& !C \& !D) \# (C \& !D) $$
 ![DeMorgan](./inco_files/Screenshot%202022-12-30%20121903.png){ width=50% }
 
 ## Sequenzielle Logik
-
-* Grundbauelement
-  - D-Flip-Flop: Speicher 1 Bit
-* Takt-Eingang
-  - Clock Signal
-* Darstellung / Ablauf
-  - Timing Diagramm
 
 ### D-Flip-Flop
 
@@ -250,7 +217,7 @@ Mittlere Länge der Codiuerung $l_{n} = $ länge der Codes:
 
 $$L = \sum_{n=0}^{N-1}P(x_{n})\cdot l_{n}$$
 
-Redundanz (Bit/Symbol):
+redundanz (Bit/Symbol):
 
 $$R = L - H $$
 
@@ -436,9 +403,7 @@ Polynoms und der Länge der Daten.
 > Generatormatrix $G$ wird
 > das Codewort $c_{10}$ erzeugt.  
 
-$$
-
-\underset{Daten-u}{
+$$\underset{Daten-u}{
 \begin{bmatrix}
 0 & 1 & 0 & 1
 \end{bmatrix}
@@ -446,21 +411,18 @@ $$
 \cdot
 \underset{Generatormatrix-G}{
 \begin{bmatrix}
-{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 0}  &{\color{Green} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 0} \\ 
-{\color{DarkOrange} 0} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 1}  &{\color{Green} 0}  &{\color{Green} 0} \\ 
-{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 1}  &{\color{Green} 0} \\ 
-{\color{DarkOrange} 1} &{\color{DarkOrange} 0}  &{\color{DarkOrange} 1}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 0}  &{\color{Green} 1} 
+{\color{orange} 1} &{\color{orange} 1}  &{\color{orange} 0}  &{\color{green} 1}  &{\color{green} 0}  &{\color{green} 0}  &{\color{green} 0} \\ 
+{\color{orange} 0} &{\color{orange} 1}  &{\color{orange} 1}  &{\color{green} 0}  &{\color{green} 1}  &{\color{green} 0}  &{\color{green} 0} \\ 
+{\color{orange} 1} &{\color{orange} 1}  &{\color{orange} 1}  &{\color{green} 0}  &{\color{green} 0}  &{\color{green} 1}  &{\color{green} 0} \\ 
+{\color{orange} 1} &{\color{orange} 0}  &{\color{orange} 1}  &{\color{green} 0}  &{\color{green} 0}  &{\color{green} 0}  &{\color{green} 1} 
 \end{bmatrix}
 }
 =
 \underset{Codewort-c_{10}}{
 \begin{bmatrix}
-{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 0 & 1
+{\color{orange}1} & {\color{orange}1} & {\color{orange}0} & 0 & 1 & 0 & 1
 \end{bmatrix}
-} 
-
-
-$$
+} $$
 
 > Bei der Übertragung von $c_{10}$ gilt die
 > Annahme, dass maximal ein Bitfehler
@@ -469,10 +431,10 @@ $$
 
 $$\underset{Codewort-c_{10}}{
 \begin{bmatrix}
-{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 0 & 1
+{\color{orange}1} & {\color{orange}1} & {\color{orange}0} & 0 & 1 & 0 & 1
 \end{bmatrix}}
 +
-{\color{Red} 
+{\color{red} 
 \underset{Fehlervektor-e}{
 \begin{bmatrix}
 0 &0 & 0 & 0 & 0 & 1 & 0
@@ -480,7 +442,7 @@ $$\underset{Codewort-c_{10}}{
 =
 \underset{Bitmuster-Empfangen-\widetilde{c}}{
 \begin{bmatrix}
-{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 1 & 1
+{\color{orange}1} & {\color{orange}1} & {\color{orange}0} & 0 & 1 & 1 & 1
 \end{bmatrix}}$$
 
 ### Decoding
@@ -488,33 +450,33 @@ $$\underset{Codewort-c_{10}}{
 >Bitmusters $\widetilde{c}$ mit der Prüfmatrix wird das
 >Syndrom bestimmt:
 > * s = 000: Kein Fehler
-> * s ≠ 000: Der Index von s in der Prüfmatrix $H^{T}$ ist die Position des zu korrigierenden Fehlers. 
+> * s != 000: Der Index von s in der Prüfmatrix $H^{T}$ ist die Position des zu korrigierenden Fehlers. 
+
 $$
 \underset{Bitmuster-Empfangen-\widetilde{c}}{
 \begin{bmatrix}
-{\color{DarkOrange}1} & {\color{DarkOrange}1} & {\color{DarkOrange}0} & 0 & 1 & 1 & 1
+{\color{orange}1} & {\color{orange}1} & {\color{orange}0} & 0 & 1 & 1 & 1
 \end{bmatrix}}
 \; 
 \cdot 
 \;
 \underset{Prüfmatrix-H^{T}}{
 \begin{bmatrix}
-{\color{Green}1} &{\color{Green}0}  &{\color{Green}0} \\ 
-{\color{Green}0} & {\color{Green}1} &{\color{Green}0} \\ 
-{\color{Green}0} &{\color{Green}0}  &{\color{Green}1} \\ 
-{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 0} \\ 
-{\color{DarkOrange} 0} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1} \\ 
-{\color{DarkOrange} 1} &{\color{DarkOrange} 1}  &{\color{DarkOrange} 1} \\ 
-{\color{DarkOrange} 1} &{\color{DarkOrange} 0}  &{\color{DarkOrange} 1} 
+{\color{green}1} &{\color{green}0}  &{\color{green}0} \\ 
+{\color{green}0} & {\color{green}1} &{\color{green}0} \\ 
+{\color{green}0} &{\color{green}0}  &{\color{green}1} \\ 
+{\color{orange} 1} &{\color{orange} 1}  &{\color{orange} 0} \\ 
+{\color{orange} 0} &{\color{orange} 1}  &{\color{orange} 1} \\ 
+{\color{orange} 1} &{\color{orange} 1}  &{\color{orange} 1} \\ 
+{\color{orange} 1} &{\color{orange} 0}  &{\color{orange} 1} 
 \end{bmatrix}}
-
 =
-
 \underset{Syndrom-s}{
 \begin{bmatrix}
  1&1  &1 
 \end{bmatrix}
 }$$
+
 ![Indexes vom Syndrom](./inco_files/Screenshot%20from%202023-01-01%2015-29-00.png){ width=50% }
 ![Korrektur](./inco_files/Screenshot%20from%202023-01-01%2015-31-00.png){ width=50% }
 
@@ -536,9 +498,10 @@ sondern einer freien Distanz $d_{free}$ (free distance).
 * Da Faltungscodes stets linear sind, gilt auch $d_{free} = w_{min}$
 * Gesucht ist das Codewort, das die minimale Anzahl Einer enthält (aber mindestens eine).
 
-Regel: Es können $\frac{d_{free}-1}{2}$ Fehler korrigiert werden auf N = 3 … 6 ∗ m Bits
+Regel: Es können $\frac{d_{free}-1}{2}$ Fehler korrigiert werden auf N = 3 … 6 $\cdot$ m Bits
 
 ### Übersicht
+
 ![Ablauf](./inco_files/Screenshot%20from%202023-01-01%2015-56-28.png){ width=100% }
 ![Ohne Fehler](./inco_files/ohne-fehler-trellis.png){ width=50% }
 ![Mit Fehler](./inco_files/MitFehlerTrellis.png){ width=50% }
