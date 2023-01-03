@@ -141,7 +141,7 @@ $$F_{2}(x) = F_{1}(x) + c$$
 
 Der untenstehende Satz ist Teil vom sogenannten Hauptsatz der Differential- und Integralrechnung.
 
-Gegeben ist eine Funktion $f$, die auf einem Intervall $I$ stetig ist, und eine beliebige Stammfunktion $F$ von $f$. Dann gilt für alle $ a, b \in  I$:
+Gegeben ist eine Funktion $f$, die auf einem Intervall $I$ stetig ist, und eine beliebige Stammfunktion $F$ von $f$. Dann gilt für alle $a, b \in I$ :
 
 $$\int_{a}^{b}f(x)dx=F(b)-F(a)$$
 
@@ -158,11 +158,13 @@ $c$. Dann gilt:
 Wir geben im Folgenden die Ableitungen/Integrale einiger Funktionen an (ohne Herleitung).
 
 **Potenz- und Logarithmus-Funktionen**
+
 * $\int a^{x}dx = \frac{a^{x}}{\ln (a)}+C$
 * $\int \ln (x)dx = x \cdot\ln(x)-x+C$
 * $\int \log(x)dx = \frac{1}{\ln(a)}\cdot  (x \cdot \ln(x) - x) + C$
 
 **Trigonometrische Funktionen**
+
 * $\int \sin(x)dx = -\cos(x)+C$
 * $\int \cos(x)dx = \sin(x)+C$
 * $\int \tan(x)dx = -\ln|\cos(x)| +C$
@@ -174,7 +176,62 @@ Wir geben im Folgenden die Ableitungen/Integrale einiger Funktionen an (ohne Her
 
 ## Begriff der Folge (direkt, rekursiv, arithmetisch, geometrisch)
 
+**Darstellungen**
+
+* Verbale Darstellung: ”Die Folge der positiven, geraden Zahlen”
+* Aufzählende Darstellung: $2, 4, 6, 8, ...$
+* Explizite Darstellung durch ein Bildungsgesetz: $a_{n} = 2n, n \in N^{\ast}$ 
+* Implizite Darstellung durch eine Rekursionsformel:  $a_{1} = 2, a_{n+1} = a_{n}+2$
+
++--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
+|                                      | explizite Darstellung      | impliztite Darstellung    | aufzählende Darstellung                       |
+|                                      |                            |                           |                                               |
++======================================+============================+===========================+===============================================+
+|                                      |                            |                           |                                               |
+| Arithmetische Folge                  | $a_{n} = c+ (n-1)d$        | $a_{1} = c$               | $c,c+d,c+2d,c+3d,...$                         |
+| $(x,d)\in \mathbb{R}$                |                            | $a_{n+1} = a_{n}+d$       |                                               |
+|                                      |                            |                           |                                               |
++--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
+|                                      |                            |                           |                                               |
+| geometrische Folge                   | $a_{n} = c \cdot q^{n-1}$  | $a_{1} = c$               | $c,c\cdot q,c\cdot q^{2},c\cdot q^{3},...$    |
+| $(c,q \in \mathbb{R}, q \neq 0,1)$   |                            | $a_{n+1} = q \cdot a_{n}$ |                                               |
+|                                      |                            |                           |                                               |
++--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
+|                                      |                            |                           |                                               |
+| harmonische Folge                    | $a_{n} = \frac{1}{n}$      | (nicht üblich)            | $1,\frac{1}{2},\frac{1}{3},\frac{1}{4},...$   |
+|                                      |                            |                           |                                               |
++--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
+|                                      |                            |                           |                                               |
+| Fibonacci-Folge                      | (nicht elementar)          | $a_{1} = 1, a_{2} = 1$    | $1,1,2,3,5,8,13$                              |
+|                                      |                            | $a_{n+2} = a_{n}+a_{n+1}$ |                                               |
+|                                      |                            |                           |                                               |
++--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
+
+
 ## Grenzwertbegriff (Monotonie, Beschränktheit, Rechenregeln, Limes einer Funktion)
+
+**Definition**
+$g$ heisst Grenzwert einer Folge, wenn die Folgenglieder ab einem gewissen $n$ dem Wert $g$ beliebig nahe kommen.
+
+> Das Ziel ist es nun, den Begriff Grenzwert präzis zu definieren.
+
+Beispiele:
+
+1. $1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8},...$ der Grenzwert ist null also: $\lim_{n\rightarrow \infty } a_{n} =0$
+2. $0.3, 0.33, 0.333, ...$ also: $\lim_{n\rightarrow \infty } a_{n} = \frac{1}{3}(=0.\overline{3})$
+
+Eine reelle Zahl $g$ heisst Grenzwert oder Limes der Folge $(a_{n})$, wenn es zu jedem $\varepsilon  > 0$ eine
+natürliche Zahl $n_{0}$ gibt, so dass für alle $n \geq n_{0}$ stets $|a_{n} - g| < \varepsilon$ gilt.
+Eine Folge heisst konvergent (”sie konvergiert”), wenn sie einen Grenzwert $g$ hat
+
+**Grenzwert einer Funktion im Endlichen**
+
+Wir betrachten eine Funktion $f(x)$ und eine Stelle $x_{0}$. Dann bezeichnet der Grenzwert $g$ von
+$f(x)$ an $x_{0}$ denjenigen Wert, dem sich die Funktion annähert, wenn $x$ immer mehr gegen $x_{0}$ geht.
+
+> Schreibweise: $\lim_{ x \rightarrow x_{0}} f(x)=g$ oder $f(x)\rightarrow g$ für $x\rightarrow x_{0}$ 
+
+*Rechenen mit Grenzewerten nach bedarf hinzufügen!!!!TODO*
 
 ## Reihen (Summenzeichen, arithmetisch, geometrisch)
 
