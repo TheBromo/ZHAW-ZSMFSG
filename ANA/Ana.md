@@ -231,13 +231,13 @@ $f(x)$ an $x_{0}$ denjenigen Wert, dem sich die Funktion annähert, wenn $x$ imm
 
 > Schreibweise: $\lim_{ x \rightarrow x_{0}} f(x)=g$ oder $f(x)\rightarrow g$ für $x\rightarrow x_{0}$ 
 
-*Rechenen mit Grenzewerten nach bedarf hinzufügen!!!!TODO*
+> TODO rechenregel, Monotonie
 
-## Reihen (Summenzeichen, arithmetisch, geometrisch)
 
 # Erweiterung der Differentialrechnung
 
-## Ableitung elementarer Funktionen
+> TODO Stetigkeit
+> TODO wendepunkt, sattlepunkt
 
 ## Ableitungsregeln
 
@@ -265,8 +265,31 @@ $u(x)$: äussere Funktion    $u'(x)=\frac{du(x)}{dx}$    Ableitung der inneren F
 * $(\log_{a}(x))'=\frac{1}{x\cdot \ln (a)}$
 
 ## Kurvendiskussion
+Fragenkatalog für die Kurvendiskussion
+
+1. Definitionsbereich?
+2. Symmetrieeigenschaften (gerade/ungerade), Periode?
+3. Schnittpunkte mit Achsen, Polstellen?
+4. Randpunkte bzw. Verhalten, wenn $x$ gegen die Grenzen des Definitionsbereichs strebt?
+5. Kandidaten für Extrema bestimmen und untersuchen
+6. Wendepunkte suchen
+7. Tabelle von Werten aufstellen (falls noch nötig)
+
 
 ## Extremwertaufgaben
+
+Eine Funktion $f(x)$ besitzt an der Stelle $x_{0}$ ein absolutes $\begin{Bmatrix}Maximum\\Minimum\end{Bmatrix}$ wenn für jedes $x$ im Definitionsbereich von $f$ gilt: $\begin{Bmatrix}f(x_{0})\geq f(x)\\f(x_{0})\leq  f(x)\end{Bmatrix}$
+
+Hilfreiche Schritte beim Lösen von Extremwertaufgaben
+
+1. Zielgrösse identifizieren.
+2. Unabhängige Variable identifizieren.
+3. Definitionsbereich bestimmen.
+4. Zielgrösse als Funktion der unabhängigen Variablen ausdrücken; ev. eine qualitative Skizze des Graphen machen.
+5. Relative Maxima resp. Minima bestimmen; Randpunkte auch berücksichtigen!
+6. Untersuchen, welche der relativen Extrema auch absolute Extrema sind (inklusive – bei offenen und halboffenen Intervallen – Betrachtung der Funktion in der Nähe des Randes)
+7. Die gesuchte Information aus den Berechnungen extrahieren. (Ev. nachschauen, nach welcher Grösse gefragt wurde: Extremalstelle? Extremalwert? Extremalpunkt?)
+
 
 ## Newton-Näherungs-Verfahren
 
