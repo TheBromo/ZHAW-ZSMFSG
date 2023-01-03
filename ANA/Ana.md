@@ -99,8 +99,75 @@ Schreibweise: $\int_{b}^{a}f(x)dx$
 
 Integral ermöglich es uns die Fläche eines graphen nicht annähern zu müssen.
 
+Gegeben ist eine auf dem Intervall $[a, b]$ stetige Funktion $f$ . Wir unterteilen das Intervall $[a, b]$
+in $n$ Teilintervalle $I_{k}$ der Länge $\Delta x = \frac{b-a}{n}$ . In jedem Teilintervall Ik wählen wir eine Stelle $x_{k}$. Der Wert, zu dem
 
+$$\sum_{k=1}^{n}f(x_{k})\cdot \Delta x $$
 
+für ein immer grösser werdendes $n$ tendiert, heisst: bestimmtes Integral von $a$ bis $b$ über $f(x)$.
+Schreibweise:
+
+$$\int_{b}^{a}f(x)dx$$
+
+* Die Wahl der $x_{k}$ spielt keine Rolle
+* Das Integralzeichen erinnert an die Summe, dx erinnert an $\Delta x$.
+*  Wie bei der Ableitung gibt es Regeln, die uns die Berechnungen vereinfachen! Es wird nicht nötig sein, jedes Mal die Summe von Grund auf auszurechnen.
+
+**Der Hauptsatz der Differential- und Integralrechnung**
+
+Stammfunktionen
+
+Gegeben sind ein Intervall $I \subset \mathbb{R}$ und eine Funktion $f : I \rightarrow  \mathbb{R}$. Eine Stammfunktion von $f$ ist
+eine Funktion $F$, für die gilt: 
+
+$$F'(x) = f(x) $$
+
+Beispiel:
+$$f(x) = 2x + 1$$
+$$F_{1}(x) = x2 + x$$
+$$F_{2}(x) = x2 + x + 424242$$
+
+Beobachtung
+
+Gegeben sind eine Stammfunktion $F$ einer Funktion $f$ und eine
+Konstante $c$. Dann ist auch die Funktion $F_{2}$ mit $F_{2}(x) = F(x)+c$
+eine Stammfunktion von $f$.
+
+![unbestimmte Integral](./ana-files/Screenshot%202023-01-03%20211024.png){ width=20% }
+
+Gegeben sind zwei Stammfunktionen $F_{1}$ und $F_{2}$ einer Funktion $f$. Dann gibt es eine Konstante $c$, so dass gilt:
+
+$$F_{2}(x) = F_{1}(x) + c$$
+
+Der untenstehende Satz ist Teil vom sogenannten Hauptsatz der Differential- und Integralrechnung.
+
+Gegeben ist eine Funktion $f$, die auf einem Intervall $I$ stetig ist, und eine beliebige Stammfunktion $F$ von $f$. Dann gilt für alle $ a, b \in  I$:
+
+$$\int_{a}^{b}f(x)dx=F(b)-F(a)$$
+
+*Somit kann man das Berechnen eines bestimmten Integrals lediglich mit Hilfe von Stammfunktionen bewerkstelligen!*
+
+Integrationsregeln
+
+Gegeben sind zwei Funktionen $f$ und $g$ mit Stammfunktionen $F$ bzw. $G$ sowie eine Konstante
+$c$. Dann gilt:
+
+1.  $c \cdot F(x)$ ist eine Stammfunktion von $c \cdot f(x)$
+2.  $F(x) + G(x)$ ist eine Stammfunktion von $f(x) + g(x)$
+
+Wir geben im Folgenden die Ableitungen/Integrale einiger Funktionen an (ohne Herleitung).
+
+**Potenz- und Logarithmus-Funktionen**
+* $\int a^{x}dx = \frac{a^{x}}{\ln (a)}+C$
+* $\int \ln (x)dx = x \cdot\ln(x)-x+C$
+* $\int \log(x)dx = \frac{1}{\ln(a)}\cdot  (x \cdot \ln(x) - x) + C$
+
+**Trigonometrische Funktionen**
+* $\int \sin(x)dx = -\cos(x)+C$
+* $\int \cos(x)dx = \sin(x)+C$
+* $\int \tan(x)dx = -\ln|\cos(x)| +C$
+
+*Es gibt noch mehr aber werden unwahrscheinlich genutzt*
 
 
 # Folgen und Reihen
