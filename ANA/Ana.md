@@ -1,5 +1,5 @@
 ---
-title:  'Analysis Zusammenfassung MAX 10S'
+title:  'Analysis Zusammenfassung'
 author:
 - Manuel Strenge
 keywords: [ANA, pain]
@@ -291,13 +291,13 @@ Linkskurve in eine Rechtskurve übergeht oder umgekehrt), heissen Wendepunkte.
 Wendepunkte mit horizontaler Tangente heissen Sattelpunkte.
 
 ![Wendepunkte ](./ana-files/Screenshot%202023-01-04%20210712.png){ width=50% }
-![Sattelpunkt ](./ana-files/Screenshot%202023-01-04%20210749.png){ width=50% }
+![Sattelpunkt ](./ana-files/Screenshot%202023-01-04%20210749.png){ width=30% }
 
 Hinreichende Bedingung für Wendepunkte:
 
 Eine Funktion $f$ besitzt an der Stelle $x_{0}$ einen Wendepunkt, wenn gilt:
 
-$$f''(x_{0}) = 0 und f'''(x_{0}) \neq 0$$
+$f''(x_{0}) = 0$ und $f'''(x_{0}) \neq 0$
 
 
 ## Ableitungsregeln
@@ -371,5 +371,5 @@ $f'(x) = 3x^{2} + 5$
 
 ![Beispiel Newton-Verfahren ](./ana-files/Screenshot%202023-01-02%20210839.png){ width=50% }
 
-> Startet man das Newton-Verfahren mit einem Wert x0 in der Nähe eines Fixpunktes, so strebt das Verfahren gegen diesen Fixpunkt.
+> Startet man das Newton-Verfahren mit einem Wert $x_{0}$ in der Nähe eines Fixpunktes, so strebt das Verfahren gegen diesen Fixpunkt.
 
