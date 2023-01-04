@@ -184,7 +184,7 @@ Wir geben im Folgenden die Ableitungen/Integrale einiger Funktionen an (ohne Her
 * Implizite Darstellung durch eine Rekursionsformel:  $a_{1} = 2, a_{n+1} = a_{n}+2$
 
 +--------------------------------------+----------------------------+---------------------------+-----------------------------------------------+
-|                                      | explizite Darstellung      | impliztite Darstellung    | aufzählende Darstellung                       |
+|                                      | **explizite Darstellung**  | **impliztite Darstellung**| **aufzählende Darstellung**                   |
 |                                      |                            |                           |                                               |
 +======================================+============================+===========================+===============================================+
 |                                      |                            |                           |                                               |
@@ -231,13 +231,74 @@ $f(x)$ an $x_{0}$ denjenigen Wert, dem sich die Funktion annähert, wenn $x$ imm
 
 > Schreibweise: $\lim_{ x \rightarrow x_{0}} f(x)=g$ oder $f(x)\rightarrow g$ für $x\rightarrow x_{0}$ 
 
-> TODO rechenregel, Monotonie
+**Rechenregel**
+
+1. $\lim_{n\rightarrow \infty }(c\cdot a_{n}) = c\cdot\lim_{n\rightarrow \infty }a_{n}$
+2. $\lim_{n\rightarrow \infty }(a_{n}+ b_{n}) = \lim_{n\rightarrow \infty }(b_{n})+\lim_{n\rightarrow \infty }(a_{n})$ 
+3. $\lim_{n\rightarrow \infty }(a_{n}\cdot b_{n}) = \lim_{n\rightarrow \infty }(b_{n})\cdot\lim_{n\rightarrow \infty }(a_{n})$
+4. $\lim_{n\rightarrow \infty }(\frac{a_{n}}{b_{n}}) = \frac{lim_{n\rightarrow \infty }(a_{n})}{lim_{n\rightarrow \infty }(b_{n})}$
+
+**Monotonie**
+
+Für eine monoton wachsende, differenzierbare Funktion $f$ gilt: Ihre Steigung (d.h. $f'(x))$ ist $\geq  0$.
+Die Umkehrung ist ebenfalls richtig: Ist $f'(x) \geq  0$, so wächst $f$ monoton.
+Analoge Gesetzmässigkeiten gelten natürlich für monoton fallende Funktionen
+
+> $f'(x)$ ist auf einem Intervall überall $\geq  0 \Leftrightarrow f$ ist auf diesem Intervall monoton steigend.
+> $f'(x)$ ist auf einem Intervall überall $\leq 0 \Leftrightarrow f$ ist auf diesem Intervall monoton fallend.
 
 
 # Erweiterung der Differentialrechnung
 
-> TODO Stetigkeit
-> TODO wendepunkt, sattlepunkt
+**Stetigkeit**
+
+Eine Funktion $f(x)$ heisst stetig an der Stelle $x_{0}$, wenn der Grenzwert $\lim_{x\rightarrow x_{0}}f(x)$ existiert und $= f(x_{0})$ ist.
+
+Eine Funktion heisst stetig, wenn sie an jeder Stelle ihres Definitionsbereiches stetig ist.
+->
+Eine Funktion ist auf einem Intervall I stetig, wenn sich ihr Graph in einem Zug, ohne Absetzen,
+zeichnen lässt.
+
+Viele Funktionen, die in der Praxis vorkommen, sind in ihrem Definitionsbereich stetig:
+
+* Polynome
+* rationale Funktionen
+* $\sin(x), \cos(x), \tan(x)$
+* Exponential- und Logarithmusfunktionen
+* Potenzfunktionen, Wurzelfunktionen
+
+Die Summe, die Differenz, das Produkt, die Komposition von stetigen Funktionen sind stetig.
+
+$$f(x)=\left\{\begin{matrix}
+x^{2} + 2a, & x< -1 \\ 
+-x^{2} + 2a, & -1\leq  x\leq  1 \\ 
+-x^{3} -3bx &  x> 1
+\end{matrix}\right.$$
+
+Wir setzen $f_{1}(x) := x^{2} + 2a, f_{2}(x) := -x^{2} + 5, f_{3}(x) = x^{3} - 3bx$.
+
+Bedingungen für Stetigkeit:
+
+* $f_{1}(x) = f_{2}(-1)$ resp.$ 1 + 2a = 4$
+* $f_{2}(1) = f_{3}(1)$ resp. $4 = 1 - 3b$
+
+Auflösen der obigen Gleichungen ergibt $a = 1.5$ und $b = -1$
+
+**Wendepunkt und Sattelpunkt**
+
+Punkte, an denen sich das Krümmungsverhalten des Graphen ändert (d.h. bei denen eine
+Linkskurve in eine Rechtskurve übergeht oder umgekehrt), heissen Wendepunkte.
+Wendepunkte mit horizontaler Tangente heissen Sattelpunkte.
+
+![Wendepunkte ](./ana-files/Screenshot%202023-01-04%20210712.png){ width=50% }
+![Sattelpunkt ](./ana-files/Screenshot%202023-01-04%20210749.png){ width=50% }
+
+Hinreichende Bedingung für Wendepunkte:
+
+Eine Funktion $f$ besitzt an der Stelle $x_{0}$ einen Wendepunkt, wenn gilt:
+
+$$f''(x_{0}) = 0 und f'''(x_{0}) \neq 0$$
+
 
 ## Ableitungsregeln
 
