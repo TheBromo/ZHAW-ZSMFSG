@@ -245,11 +245,99 @@ $$(p_{1} \rightarrow \neg p_{1})  \wedge (\neg p_{1} \rightarrow p_{1}) \qquad \
 
 ### NORMALFORMEN NNF | DNF | KNF
 
+Literale sind atomare Formeln oder negierte atomare Formeln.
 
+Eine aussagenlogische Formel ist:
+
+* In Negationsnormalform(NNF), wenn alle Negationen in Literalen vorkommen und wenn keine Implikationen ($\rightarrow$) vorkommen.
+
+* In disjunktiver Normalform(DNF), wenn sie von der Form $$(L_{1,1} \wedge L_{1,2} \wedge ...) \vee (L_{2,1} \wedge L_{2,2} \wedge ...) \vee (L_{3,1} \wedge L_{3,2} \wedge ...)...$$ mit Literalen $L_{i,j}$ ist.
+
+* In konjunktiver Normalform(KNF), wenn sie von der Form $$(L_{1,1} \vee L_{1,2} \vee ...) \wedge (L_{2,1}\vee L_{2,2} \vee ...)\wedge (L_{3,1} \vee L_{3,2} \vee ...)...$$  mit Literalen $L_{i,j}$ ist.
+
+
+$$\neg(p \vee q)$$
+
+ist in keiner der oben eingeführten Normalformen. Die Formel
+
+$$(\neg p \vee q) \wedge ((p\wedge p_{1}) \vee (p_{2} \wedge p_{3})) $$
+
+ist in NNF aber weder in DNF noch in KNF. Die Formel
+
+$$p \vee q$$
+
+ist in NNF, KNF und DNF.
 
 # Mengen, Relationen und Funtionen
 
+Formel                                                                                                                                  Beschreibung
+-------------------                                                                                                                     ---------------------------------
+$A \cup B = B \cup  A$  und                                                                                                             Kommutativität der Vereinigung und des Schnittes
+$A \cap B =  B \cap A$
+$A \cap  (B \cap C) = (A \cap B) \cap C$  und                                                                                           Assoziativgesetze von Schnitt und Vereinigung
+$A \cup  (B \cup C) = (A \cup B) \cup C$
+$A \cap  (B \cup C) = (A \cap  B) \cup (A \cap  C)$ und                                                                                 Distributivgesetze von $\cap$ mit $\cup$
+$A \cup (B \cap  C) = (A \cup B) \cap   (A \cup C)$
+$A \cap  A = A \;  und \;   A \cup  A = A$                                                                                              Idempotenzgesetz
+$(C \setminus A) \cap (C \setminus B) = C \setminus (A \cup  B)$ und                                                                    Regeln von DeMorgan
+$(C \setminus A) \cup  (C \setminus B) = C \setminus (A \cap B)$
+
+
 ## Der Mengenbegriff und grundlegende Definitionen
+
+Symbol          Definition
+---             ---
+$y \in  X$      X ist eine Menge und y ein Element von X
+$y \notin X$    y ist kein Element von X
+
+### DEFINIERENDE EIGENSCHAFT
+
+$X = Y \Leftrightarrow \forall z (z \in X \Leftrightarrow z \in Y)$ Zwei Mengen sind genau dann gleich, wenn sie die gleichen Elemente enthalten: Es gilt für alle Mengen X und Y die Äquivalenz.
+
+### Explizite Schreibweise
+
+![Wichtige Zahlenmengen](./dm_files/Screenshot%202023-01-07%20171042.png){ width=50% }
+
+Bezeichnung                                                                 Formel
+------------                                                                -------------------
+Sind mathematische Objekte x1, . . . , xn gegeben, dann schreiben wir       $\{x_{1}, . . . , x_{n}\}$
+$\mathbb{N}$                                                                $\{0, 1, 2, 3, …\}$
+$\mathbb{Z}$                                                                $\{…, -2, -1, 0, 1, 2, …\}$
+
+### Teilmengen
+
+![Veranschaulichung der Mengenbildung durch prädikative Schreibweise.](./dm_files/Screenshot%202023-01-07%20180117.png){ width=50% }
+
+Zeichen         Beschreibung                            Equivalent
+-----------     -------------                           -------------
+$x\subseteq Y$  X ist eine Teilmenge von Y,             $X \subseteq  Y :\Leftrightarrow  \forall x (x \in  X \Rightarrow  x \in  Y)$
+                wenn jedes Element von X auch 
+                ein Element von Y ist.
+$x\subsetneq Y$ X ist eine echte Teilmenge von Y        $X \subsetneq  Y :\Leftrightarrow  X \subseteq  Y \wedge  X \neq  Y$
+                , falls X eine von Y 
+                verschiedene Teilmenge von Y ist. 
+
+### PRÄDIKATIVE SCHREIBWEISE
+
+$X$ ist eine Menge und $E$ eine Eigenschaft (Prädikat). Die Menge aller Elemente $z$ von $X$ mit der Eigenschaft $E(z)$
+
+$$\{ z \in X | E(z) \} \; oder \; \{ z | z \in  X \wedge  E(z) \}$$
+
+### ERSETZUNGS-SCHREIBWEISE
+
+Ist F eine Funktion und ist X eine Menge, dann beinhaltet die Menge
+
+$$\{ F (x) | x  \in X \}$$
+
+### VEREINIGUNG
+
+Sind X und Y Mengen kann ich sie vereinigen:
+
+$$X \cup Y := \{ x | x \in X \vee x \in Y \}$$
+
+Ist $I$ eine Menge so, dass für alle Elemente $i \in I$ auch Ai eine Menge ist, dann ist die Vereinigung von ${ A_{i} | i \in I }$
+
+$$\bigcap_{i\in I}^{} A_{i}:= \{ x | \exists i \in I (x \in A_{i})\}$$
 
 ## Relationen, Funktionen und Graphen
 
