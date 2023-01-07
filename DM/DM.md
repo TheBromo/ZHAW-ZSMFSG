@@ -185,26 +185,13 @@ $p_{0}$ $q$ $p_{1}$ $q \wedge p_{1}$    $p_{0} \rightarrow (q \wedge p_{1}$
 Man kann Wahrheitstabellen auch zur Darstellung von logischen Operatoren $^{2}$ benützen. Beispielhaft geben wir die Wahrheitstabellen für die Operatoren
 (Junktoren) $\wedge, \vee, \rightarrow, \neg$ an.
 
-$F$ $G$ $F\wedge G$
---  --  ----    
-0   0   0
-0   1   0
-1   0   0
-1   1   1
+$F$ $G$ $F\wedge G$ $F\vee G$   $F\rightarrow G$
+--  --  ----        ----        --------
+0   0   0           0           1
+0   1   0           1           1
+1   0   0           1           0
+1   1   1           1           1
 
-$F$ $G$ $F\vee G$
---  --  ----    
-0   0   0
-0   1   1
-1   0   1
-1   1   1
-
-$F$ $G$ $F\rightarrow G$
---  --  ----    
-0   0   1
-0   1   1
-1   0   0
-1   1   1
 
 $F$ $\neg F$
 --  -------
@@ -335,9 +322,80 @@ Sind X und Y Mengen kann ich sie vereinigen:
 
 $$X \cup Y := \{ x | x \in X \vee x \in Y \}$$
 
+die Vereinigung von $X$ mit $Y$ . Die Schnittmenge von $X$ und $Y$ ist durch
+
+$$X \cap  Y := {x \in X | x \in Y } = \{ x \in Y | x \in X \} = \{x | x \in X \wedge  x \in Y \}$$
+
 Ist $I$ eine Menge so, dass für alle Elemente $i \in I$ auch Ai eine Menge ist, dann ist die Vereinigung von ${ A_{i} | i \in I }$
 
 $$\bigcap_{i\in I}^{} A_{i}:= \{ x | \exists i \in I (x \in A_{i})\}$$
+
+die Vereinigung von $\{A_{i}| i \in I\}$ genannt. Analog dazu, ist die Schnittmenge durch
+
+$$\bigcap_{i \in I}^{} A_{i} := \{ x \forall i \in  I ( x \in A_{i} ) \} $$
+
+gegeben, falls $I \neq \varnothing$ ist.
+
+### Disjunkt
+
+Zwei Mengen $X$ und $Y$ heissen disjunkt, falls sie keine gemeinsamen
+Elemente haben, d.h. falls $X \cap Y = \varnothing$ gilt. Wir sagen eine Menge $\{X_{i}| i \in I\}$ von
+Mengen bestehe aus paarweise disjunkten Mengen, wenn folgendes gilt:
+
+$$\forall i , j \in I (i \neq j \Rightarrow X_{i} \cap X_{j} = \varnothing)$$
+
+### Paarweise Disjunkt
+
+Wir sagen eine Menge $\{ X_{i} | i \in I \}$ von Mengen bestehe aus paarweise disjunkten Mengen, wenn folgendes gilt:
+
+$$\forall i, j \in I ( i \neq j \Rightarrow  A_{i} \cap A_{j} = \varnothing)$$
+
+![Visualisierung](./dm_files/Screenshot%202023-01-07%20223613.png){ width=50% }
+
+### SCHNITTMENGE
+
+Sind X und Y Mengen kann ich die Schnittmenge so ziehen $X \cap Y := \{ x | x \in X \wedge x \in Y \}$
+
+Analog zur Vereinigung, aber mit Allquantor ist die Schnittmenge gegeben, falls $I \neq \varnothing$ ist.
+
+$$\bigcap_{i \in I}^{} A_{i} := \{ x \forall i \in  I ( x \in A_{i} ) \} $$
+
+### Differenzmenge
+
+Sind $X$ und $Y$ beliebige Mengen, so definieren wir die Menge aller Elemente von $X$, die nicht zu $Y$ gehören:
+
+$$X \setminus  Y := \{ x \in X | x \notin  Y \}$$
+
+Bsp.: Die Menge ungerader Zahlen können wir als $\mathbb{N} \setminus  \{ 2x | x \in \mathbb{N} \}$  schreiben.
+
+### POTENZMENGE
+
+Ist $A$ eine beliebige Menge, so bezeichnen wir die Potenzmenge von $A$, die genau die Teilmengen von $A$ als Elemente enthält, wie folgt
+
+$$P $$
+
+### Rechenregeln
+
+Kommutativität der Vereinigung und des Schnittes:
+
+$A \cup B = B \cup A$ und $A \cap B = B \cap A$.
+
+Assoziativgesetze von Schnitt und Vereinigung:
+
+$A \cap (B \cap C) = (A \cap B) \cap C$ und $A \cup (B \cup C) = (A \cup B) \cup C$
+
+Distributivgesetze von $\cap$ mit $\cup$:
+
+$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ und $A \cup (B \cap C) = (A \cup B) \cap (A \cap C)$
+
+Idempotenzgesetz:
+
+$A \cap A = A$ und $A \cup A = A$
+
+Regeln von DeMorgan:
+
+$(C\setminus A) \cap (C\setminus B) = C\setminus(A \cup B)$ und $(C\setminus A) \cup (C\setminus B) = C\setminus(A \cap B)$
+
 
 ## Relationen, Funktionen und Graphen
 
