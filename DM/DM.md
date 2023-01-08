@@ -31,7 +31,7 @@ $A \Leftrightarrow  B$  A äquivalent B
 
 Die Aussagen ‘Es gibt Einhörner’ $\Rightarrow$ ‘8 ist eine Primzahl’ und ‘Spinat ist grün’ $\Rightarrow$ ‘2 ist eine Primzahl’ sind beide (mathematisch gesehen) wahr.
 
-**JUNKTOREN-REGELN:**
+**Junktoren-Regeln**
 
 Zeichen                                                                 Name
 ---------------------------------                                       ------------------
@@ -45,7 +45,7 @@ $A \vee (B \wedge C) \Leftrightarrow (A \vee B) \wedge (A \vee C)$
 $\neg (A \wedge B) \Leftrightarrow  \neg A \wedge \neg B$               Regeln von De Morgan
 $\neg (A \vee B) \Leftrightarrow  \neg A \vee\neg B$
 
-**KONTRAPOSITION JUNKTOREN-REGEL**
+**Kontraposition Junktoren-Regel**
 
 Gleichung                                   Beschreibung
 -------------------------------             ----------------------------------------------------------------
@@ -60,7 +60,7 @@ $\neg B \Rightarrow\neg A$                  (Definition von $\neg B \Rightarrow\
 
 
 
-**QUANTOREN**
+**Quantoren**
 
 Kurz: $\forall =$ All, $\exists =$ mind. 1 $\exists! =$ es gibt genau 1
 
@@ -80,7 +80,7 @@ Die Symbole $\forall$ und $\exists$ heissen Allquantor und Existenzquantor
 
 $\forall x \forall y A(x,y) \Leftrightarrow \forall x,y A(x,y)$
 
-**QUANTOREN-REGEL**
+**Quantoren-regel**
 
 Regel                                                                                   Beschreibung 
 ---------------------------------------------------------------------------             ----------------------------------------------------------------
@@ -230,7 +230,7 @@ $$p_{1} \wedge (p_{2} \wedge p_{3}) \qquad p{3} \qquad p \rightarrow q $$
 
 $$(p_{1} \rightarrow \neg p_{1})  \wedge (\neg p_{1} \rightarrow p_{1}) \qquad \neg p_{3} \wedge p_{3}\qquad \neg(F\rightarrow F)$$
 
-### NORMALFORMEN NNF | DNF | KNF
+### Normalformen NNF | DNF | KNF
 
 Literale sind atomare Formeln oder negierte atomare Formeln.
 
@@ -277,7 +277,7 @@ Symbol          Definition
 $y \in  X$      X ist eine Menge und y ein Element von X
 $y \notin X$    y ist kein Element von X
 
-### DEFINIERENDE EIGENSCHAFT
+### Definierende Eigenschaft
 
 $X = Y \Leftrightarrow \forall z (z \in X \Leftrightarrow z \in Y)$ Zwei Mengen sind genau dann gleich, wenn sie die gleichen Elemente enthalten: Es gilt für alle Mengen X und Y die Äquivalenz.
 
@@ -304,19 +304,19 @@ $x\subsetneq Y$ X ist eine echte Teilmenge von Y        $X \subsetneq  Y :\Leftr
                 , falls X eine von Y 
                 verschiedene Teilmenge von Y ist. 
 
-### PRÄDIKATIVE SCHREIBWEISE
+### Prädikative schreibweise
 
 $X$ ist eine Menge und $E$ eine Eigenschaft (Prädikat). Die Menge aller Elemente $z$ von $X$ mit der Eigenschaft $E(z)$
 
 $$\{ z \in X | E(z) \} \; oder \; \{ z | z \in  X \wedge  E(z) \}$$
 
-### ERSETZUNGS-SCHREIBWEISE
+### Ersetzungs-schreibweise
 
 Ist F eine Funktion und ist X eine Menge, dann beinhaltet die Menge
 
 $$\{ F (x) | x  \in X \}$$
 
-### VEREINIGUNG
+### Vereinigung
 
 Sind X und Y Mengen kann ich sie vereinigen:
 
@@ -352,7 +352,7 @@ $$\forall i, j \in I ( i \neq j \Rightarrow  A_{i} \cap A_{j} = \varnothing)$$
 
 ![Visualisierung](./dm_files/Screenshot%202023-01-07%20223613.png){ width=50% }
 
-### SCHNITTMENGE
+### Schnittmenge
 
 Sind X und Y Mengen kann ich die Schnittmenge so ziehen $X \cap Y := \{ x | x \in X \wedge x \in Y \}$
 
@@ -368,7 +368,7 @@ $$X \setminus  Y := \{ x \in X | x \notin  Y \}$$
 
 Bsp.: Die Menge ungerader Zahlen können wir als $\mathbb{N} \setminus  \{ 2x | x \in \mathbb{N} \}$  schreiben.
 
-### POTENZMENGE
+### Potenzmenge
 
 Ist $A$ eine beliebige Menge, so bezeichnen wir die Potenzmenge von $A$, die genau die Teilmengen von $A$ als Elemente enthält, wie folgt
 
@@ -396,14 +396,151 @@ Regeln von DeMorgan:
 
 $(C\setminus A) \cap (C\setminus B) = C\setminus(A \cup B)$ und $(C\setminus A) \cup (C\setminus B) = C\setminus(A \cap B)$
 
-
 ## Relationen, Funktionen und Graphen
+
+(Tupel). Es sei $n > 0$ eine natürliche Zahl. Ein n-Tupel ist ein Term von
+der Form
+
+$$x_{1},...,x_{n}$$
+
+Für beliebige Tupel gilt:
+
+$$(x_{1}, ... , x_{n}) = (y_{1}, ... y_{k}) :\Leftrightarrow n = k \wedge x_{1} = y_{1} \wedge ... \wedge y_{n} = x_{n}$$
+
+2-Tupel nennen wir *Paare* und 3-Tupel *Tripel*
+
+**Kartesische Produkte**
+
+Die Gesamtheiten aller Tupel mit Elementen aus einer oder mehreren Mengen nennt man kartesische Produkte.
+
+Es seien $A_{1}, ... , A_{n}$ Mengen und $n \in \mathbb{N} mit n > 0$. Das kartesische
+Produkt von $A_{1}, ... , A_{n}$, ist die Menge aller $n$-Tupel mit Einträgen aus den Mengen
+$A_{1}, ... , A_{n}$:
+
+$$\prod_{i=1}^{n}A_{i}=\{(a_{1},...,a_{n})|a_{1}\in A_{1}\wedge \cdots \wedge a_{n} \in A_{n}\}$$
+
+Bsp.:
+Geg.: $A = \{a, b, x, y\}$ und $B = \{x, y\}$
+$(B \times  (A \setminus  B)) \times \{3\}$
+Lösung: $$\{(x, y) \times (a, b)\} \times \{3\}
+\{(x, a), (x, b), (y, a), (y, b)\} \times \{3\}
+\{(x, a, 3), (x, b, 3), (y, a, 3), (y, b, 3)\}$$
+
+**Relationen**
+
+Eine n-stellige Relation $R$ auf den Mengen $A_{1},..., A_{n}$ ist eine Menge von n-Tupeln aus $A_{1} \times ... \times A_{n}$. Die Relation auf $A_{1}, ..., A_{n}$ sind genau die Teilmengen:
+
+$$R\subseteq A_{1}\times ... \times A_{n}$$
+
+Ist $R$ eine n-stellige Relation und gilt $(x_{1}, ... , x_{n}) \in R$, dann sagen wir, dass die Elemente $x_{1}, ... , x_{n}$ zueinander in Relation $R$ stehen
+
+### Graphen
+
+**Relationsgraphen**
+
+$R = \{(x, y) | x, y \in N \wedge x, y < 100 \wedge x + y$ ist ein Vielfaches von $7\}$ ![Visualisierung](./dm_files/Screenshot%202023-01-08%20000346.png){ width=50% }
+
+**Gerichteter Graph**
+
+Ein (gerichteter) Graph ist ein Paar $G = (V,E)$ bestehend aus einer Menge $V$ (Knotenmenge) und einer binären Relation $E \subseteq V \times V$ (Kantenmenge).
+
+$V = \{1, 2, 3, 4\} E = \{(1, 1),(1, 2),(1, 3),(1, 4),(2, 2),(2, 4),(3, 3),(4, 4)\}$
+
+![Visualisierung](./dm_files/Screenshot%202023-01-08%20001105.png){ width=50% }
 
 ### Funktionen
 
+Es seien $A$ und $B$ beliebige Mengen. Eine Relation $f \subseteq  A \times B$ ist eine Funktion von $A$ nach $B$, falls:
+
+$$\forall x \in A \exists! y \in B((x, y) \in f)$$
+
+gilt. In diesem Fall schreiben wir
+
+$$f : A\rightarrow  B.$$
+
+Sind $f : A\rightarrow  B$ und  $f : B\rightarrow  C$ Funktionen, dann ist die Komposition
+$g$ nach $f$ durch
+
+$$g  \circ f : A\rightarrow C$$
+$$(g  \circ f)(x) = g(f(x))$$
+
+gegeben.
+
+Eine Funktion $f$ ist genau dann injektiv, wenn die Relation
+
+$$f^{-1} = \{(y,x)|(x,y)\in f\}$$
+
+eine Funktion ist. Ist $f : A \rightarrow B$ eine injektive Funktion, dann nennt man $f^{-1} : Im(f)\rightarrow A$ die Umkehrfunktion oder inverse Funktion von $f$.
+
+**Injektiv**
+
+Eine Funktion, die injektiv ist, hat für jedes x genau ein y und für jedes y genau ein x.
+
+**Surjektiv**
+
+Wenn von x auf alle y von B gekommen werden kann.
+
+**Bijektiv**
+
+Wenn eine Funktion Injektiv und Surjektiv ist, dasnn ist sie bijektiv
+
+
+
+Surjektivität und Injektivität lassen sich gut anhand von “Gegenbeispielen” veranschaulichen. Ist die Funktion $f : A \rightarrow B$ durch
+
+![Visualisierung](./dm_files/Screenshot%202023-01-08%20003726.png){ width=50% }
+
+* Die Funktion ist wegen $f(x_{1}) = f(x_{3})$ nicht injektiv.
+* Die Funktion ist wegen $y_{4} \in B$ nicht surjektiv auf $B$.
+* Die Funktion ist surjektiv auf $\{y_{1}, y_{2}, y_{3}\}$.
+
+Für beliebige Funktionen $f : X \rightarrow Y$ und $g : Y  \rightarrow Z$ gelten folgende Aussagen:
+
+* Falls $f : X \rightarrow Y$ und $g : Y \rightarrow Z$ injektiv sind, dann ist auch $g \circ f : X \rightarrow Z$ injektiv.
+* Falls $f : X \rightarrow Y$ und $g : Y \rightarrow Z$ surjektiv sind, dann ist auch $g \circ f : X \rightarrow Z$ surjektiv.
+
+Lemma 2 (Schubfachprinzip). Wenn $n$ Objekte auf $m$ Behälter verteilt werden und $n > m$ gilt, dann gibt es mindestens einen Behälter, der mehr als ein Objekt enthält. Formal, sind $n > m$ natürliche Zahlen und gelte $|X| = n$ sowie $|Y | = m$, dann gibt es keine injektive Funktion $F : X \rightarrow Y$.
+
+
 ### Grössenvergleiche von unendlichen Mengen
 
+Begriff                 Erklärung
+--------                ---------------
+Endlichkeit             Eine Menge $X$ heisst endlich, wenn es eine natürliche Zahl $n$ und eine
+                        Darstellung der Form $X = \{x_{1}, x_{2}, ... , x_{n}\}$ gibt.Wenn 
+                        $X = \{x_{1}, ... , x_{n}\}$
+                        gilt, und die Elemente $x_{i}$ paarweise verschieden sind (d.h. es gilt 
+                        $i \neq j \Rightarrow x_{i} \neq x_{j} )$, dann hat die Menge $X$ genau $n$
+                        viele Elemente und wir schreiben $|X| = n$
+Unendlichkeit           Nicht endliche Mengen nennen wir unendlich.
+Abzählbar               Eine Menge $X$ heisst abzählbar, wenn eine surjektive Funktion
+                        $F : \mathbb{N} \Rightarrow X$
+                        existiert oder wenn $X = \varnothing$ gilt.
+Abzählbar unendlich     Die Menge $X$ heisst abzählbar unendlich, wenn X abzählbar und unendlich ist
+Überabzählbar           Eine überabzählbare Menge ist eine Menge, die nicht abzählbar ist.
+
+
+* Jede endliche Menge ist abzählbar!
+* Jede Teilmenge einer abzählbaren Menge ist abzählbar!
+* Ist $X$ eine abzählbare Menge und gibt es eine surjektive Funktion $F: X \rightarrow Y$, dann ist auch $Y$ abzählbar.
+* (Erstes Diagonalargument) Die Menge $\mathbb{N} \times \mathbb{N}$, bestehend aus allen Paaren von natürlichen Zahlen, ist abzählbar. (siehe Bild → ) (d.h. auch $\mathbb{Z} \times \mathbb{Z}$ ist abzählbar)
+* Jede Vereinigung von abzählbar vielen abzählbaren Mengen ist abzählbar. Konkret jede Vereinigung der Form: ist abzählbar, wenn alle $A_{i}$ abzählbar sind.
+
+
+![Anstelle eines formalen Beweises, skizzieren wir eine Abzählung aller Paarevon natürlichen Zahlen wie folgt](./dm_files/Screenshot%202023-01-08%20010409.png){ width=50% }
+
+
 ### Ordnungs- und Äquivalenzrelationen
+
+Eine binäre Relation $R$ auf einer Menge $X$ heisst:
+
+Name            für alle $x, y, z \in X$            Präordnung      Halbordnung
+----------      -------------------------           -----------     --------------
+Reflexiv        $xRx$                               x               x
+Symmetrisch     $xRy \Rightarrow yRx$                                       
+Antisymmetrisch $xRy \wedge yRx \Rightarrow x = y$                  x
+Transitiv       $xRy \wedge yRz \Rightarrow xRz$    x               x
+
 
 # Rekursive Strukturen und die natürlichen Zahlen
 
