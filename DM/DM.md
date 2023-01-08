@@ -372,7 +372,12 @@ Bsp.: Die Menge ungerader Zahlen können wir als $\mathbb{N} \setminus  \{ 2x | 
 
 Ist $A$ eine beliebige Menge, so bezeichnen wir die Potenzmenge von $A$, die genau die Teilmengen von $A$ als Elemente enthält, wie folgt
 
-$$P $$
+$$\mathcal{P} :=\{ x | x  \subseteq A\}$$
+
+Beispiel:
+
+$$\mathcal{P}(\varnothing) =\{\varnothing\} \neq \varnothing $$
+$$\mathcal{P}(\{0,1\}) =\{\varnothing\,\{0\},\{1\},\{0,1\} \} $$
 
 ### Rechenregeln
 
@@ -541,6 +546,112 @@ Symmetrisch     $xRy \Rightarrow yRx$
 Antisymmetrisch $xRy \wedge yRx \Rightarrow x = y$                  x
 Transitiv       $xRy \wedge yRz \Rightarrow xRz$    x               x
 
+
+Die Verliebtheitsrelation $L$ hat unter anderem folgende Eigenschaften:
+
+* $L$ ist nicht reflexiv, da nicht alle Menschen “selbstverliebt” sind.
+* $L$ ist (leider8) nicht symmetrisch, da Liebe nicht immer auf Gegenseitigkeit beruht.
+* $L$ ist nicht Antisymmetrisch, da es durchaus “echte” Liebespaare (aus zwei Partnern bestehend) gibt.
+* $L$ ist nicht transitiv, da die Meisten Leute den angebeteten der eigenen angebeteten nicht lieben (ganz im Gegenteil!).
+
+**Äquivalenzrelationen**
+
+Äquivalenzrelationen sind reflexive, symmetrische und transitive Relationen.
+
+Bsp.: Auf jeder Menge $X$ ist die Gleichheitsrelation $\Delta X = \{(x, x) | x 2 X\}$ eine Äquivalenzrelation. Weil
+jede Äquivalenzrelation reflexiv ist, ist die Gleichheitsrelation auf jeder Menge die “kleinste”
+Äquivalenzrelation. Am anderen Ende des Spektrums steht die Relation $X \times X$, sie ist die grösste
+Äquivalenzrelation auf der Menge X.
+
+
+Es sei $R$ eine Äquivalenzrelation auf einer Menge $X$ und $x \in X$. Die
+Äquivalenzklasse $[x]R$ von $x$ bezüglich $R$ ist die Menge aller Elemente von
+$X$, die zu $x$ in Relation $R$ stehen:
+
+$$[x]R := \{ y \in X | xRy \}$$
+
+Jedes Element einer Äquivalenzklasse nennen wir einen Repräsentanten
+der entsprechenden Äquivalenzklasse. Die Faktormenge $X / R$ von $X$
+modulo $R$ ist die Menge aller Äquivalenzklassen:
+
+$$X/R := \{ [x]R | x \in X \}$$
+
+Wir betrachten die Relation $\equiv_{5}$ auf der Menge $\mathbb{Z}$, die wie folgt gegeben ist:
+
+$$X \equiv_{5} y :\Leftrightarrow (x-y)$$ ist ein Vielfaches von 5
+
+Ist die Relation eine Äquivalenzrelation?
+
+- Reflexivität: Es gilt für jede Zahl $z$
+    -   $0 \cdot  5 = 0 = (z-z)$
+    Also ist $(z-z)$ ein Vielfaches von $5$, somit gilt $z \equiv_{5} z$
+- Symmetrie: Gilt $x \equiv_{5} y$, dann gibt es eine ganze Zahl $z$ mit $5z = (x-y)$. Also ist auch 
+    -   $(y - x) = -(x - y) = -5z = 5 \cdot (-z)$
+    ein Vielfaches von $5$, somit gilt $y \equiv_{5} x$, wenn $x \equiv_{5} y$.
+- Transitivität: Gilt $x \equiv_{5} y$ und $y \equiv_{5} z$, dann gibt es ganze Zahlen $r, s$ mit $5r = x - y$ und $5s = y - z$. Insgesamt erhalten wir, dass
+    - $x - z = (x - y) + (y - z) = 5r + 5s = 5(r + s)$ 
+    ein Vielfaches von $5$ ist und somit, dass $x \equiv_{5}$ z gilt.
+
+Die Äquivalenzklassen modulo der Relation $\equiv_{5}$ heissen Restklassen modulo 5
+
+![Restklassen Modulo5](./dm_files/Screenshot%202023-01-08%20154105.png){ width=100% }
+
+**Lemma 3**
+Ist $\sim$ eine Äquivalenzrelation auf einer Menge $X$ und gilt $x,y \in X$ mit $x \sim y$, dann gilt $[x] \sim = [y]\sim$ . Mit
+anderen Worten, äquivalente Elemente repräsentieren stets dieselbe Äquivalenzklasse
+
+**Satz 10**
+Ist $\sim$ eine Äquivalenzrelation auf einer Menge $X$ und gilt $x y \in X$ mit $[x] \sim \neq [y]$, dann gilt $[x]\sim \cap [y]\sim= \varnothing$. Mit anderen Worten, verschiedene Äquivalenzklassen sind immer disjunkt.
+
+**Satz 11**
+Ist $\sim$ eine Äquivalenzrelation auf einer Menge $X$, dann ist die Faktormenge $X / \sim$ eine Partition von $X$
+
+**Satz 12**
+Ist $P = \{A_{i} | i \in I\}$ eine Partition von der Menge $X$, dann ist die Relation $\sim$, gegeben durch
+
+$$x \sim y : \Leftrightarrow \exists i \in I (x \in A_{i} \wedge y \in A_{i})$$
+
+eine Äquivalenzrelation auf X. Zusätzlich gilt
+
+$$\frac{x}{\sim} = P$$
+
+**Ordnungsrelationen**
+
+Alle Relationen, mit welchen man Objekte vergleichen und mehr oder weniger sortieren kann. Das
+Standardbeispiel ist die Ordnungsrelation $\leq$ auf verschiedene Zahlenmengen.
+
+R = binäre Relation / M = Menge
+
+Name                    Beschreibung
+---------               -----------------------------
+R-unvergleichbar        Zwei Elemente $x, y \in M$ heissen R-unvergleichbar, falls weder $xRy$ noch $yRx$ gilt.
+R-minimal               Ein Element $x \in X$ einer Teilmenge $X  \subseteq M$ von $M$ heisst R-minimal in $X$, falls es kein anderes Element $y \in X$ mit $yRx$ gibt.
+R-maximal               Ein Element $x \in X$ einer Teilmenge $X \subseteq M$ von $M$ heisst R-maximal in $X$, falls es kein anderes Element $y \in X$ mit $xRy$ gibt.
+
+*   Die minimalen Elemente von $M$ sind $a$ und $x$
+*   Das einzige maximale Element von $M$ ist $z$.
+
+![Relationen](./dm_files/Screenshot%202023-01-08%20160324.png){ width=50% }
+
+Ordnung                     Relation    
+-----------                 --------------------------
+Präordnung                  $R$ ist eine Präordnung auf $M$, wenn $R$ *reflexiv* und *transitiv* ist
+Halbordnung                 $R$ ist eine Halbordnung auf $M$, wenn $R$ *reflexiv*, *antisymmetrisch* und *transitiv* ist
+Totale/                     $R$ ist eine totale oder lineare Ordnung auf $M$, wenn $R$ eine Halbordnung ist und
+lineare Ordnung             keine R-unvergleichbaren Elemente existieren.
+Wohlordnung                 $R$ ist eine Wohlordnung auf $M$, wenn $R$ eine totale Ordnung auf $M$ ist so, dass
+                            jede Teilmenge $X \neq \varnothing$ von $M$ (mindestens) ein R-minimales Element enthält
+
+* Die Relation $\leq$ ist eine totale Ordnung auf die Menge $\mathbb{R}$ und auch auf die Menge $\mathbb{Z}$, weil sie kein kleinstes Element hat. Die Relation $\leq$ auf die Menge $\mathbb{N}$ ist eine **Wohlordnung**.
+* Die Teilerrelation T auf der Menge $\mathbb{Z}$ ist eine **Halbordnung** aber keine totale Ordnung. Die Elemente 7 und 5 sind T-unvergleichbar
+
+Abschluss               Beschreibung
+----                    ---------------------
+Transitiver             Als transitiven Abschluss von R bezeichnet man die kleinste (bezüglich $\subseteq$) 
+Abschluss $R^{+}$       transitive Relation, die $R$ als Teilmenge enthält, sie wird mit $R^{+}$ notiert.
+Reflexiv-               
+transitiver             Die kleinste Relation, die $R^{+}$ enthält und reflexiv ist, nennt man den
+Abschluss $R^{+}$       *reflexivtransitiven Abschluss* von R, sie wird mit $R^{\ast }$ bezeichnet.
 
 # Rekursive Strukturen und die natürlichen Zahlen
 
