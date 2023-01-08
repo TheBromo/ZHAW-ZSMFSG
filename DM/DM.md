@@ -1022,6 +1022,98 @@ Die Äquivalenzklasse von z bezüglich der Relation $\equiv_{n}$ nennen wir Rest
 
 Die Menge der Restklasse von $\mathbb{Z}$ modulo $n$ bezeichnen wir mit
 
+$$\frac{\mathbb{Z}}{n} = \{[z]n | z \in \mathbb{Z}\}$$
 
+
+$[x]_{n} + [y]_{n} := [x + y]_{n}$
+
+$[x]_{n} \cdot [y]_{n} := [xy]_{n}$
+
+Verknüpfungstabelle der Addition in $\mathbb{Z}$/6:
+
+![Verknüpfungstabelle der Addition in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200740.png){ width=50% }
+![Verknüpfungstabelle der Multiplikation in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200846.png){ width=50% }
+
+Beispiel 61 (Rechnen mit Uhrzeiten). Rechnen mit Uhrzeiten (volle Stunden einer
+Analoguhr) entspricht mit Restklassen Modulo 12 zu rechnen
+
+* Es ist 9 Uhr. Wie lange dauert es, bis es das nächste Mal 2 Uhr ist? Wir müssen die Gleichung
+
+$$\bar{9}+x =\bar{2} $$
+
+* lösen. Wie vorher gesehen, erhalten wir die Lösung durch
+
+$$x = \bar{2} + \bar{-9} = \bar{2 - 9} = \bar{-7} = \bar{5}$$
+
+Es geht also noch 5 Stunden bis 2 Uhr.
 
 ### Chinesicher Restsatz
+
+Der chinesische Restsatz besagt, dass bei paarweise teilerfremden Zahlen $n_{1}, .., n_{k} \in N>1$
+und beliebigen ganze Zahlen $y_{1}, .., y_{k}$, Gleichungssysteme von der Form
+
+$$x\equiv_{n_{1}}y_{1}$$
+$$x\equiv_{n_{2}}y_{2}$$
+$$...$$
+$$x\equiv_{n_{k}}y_{k}$$
+
+eindeutig in $\mathbb{Z}/(n_{1}, .., n_{k})$ lösbar4 sind.
+
+der Menge $[x]_{\prod_{i=1}^{k}}n_{i}$ entspricht.
+
+Mit 2 Gleichungen:
+
+$$x\equiv_{m1}a1$$
+$$x\equiv_{m2}a2$$
+
+x1 und x2 bestimmen
+
+$$m2 \cdot x1\equiv_{m1}a1$$
+$$m1 \cdot x2\equiv_{m3}a1$$
+
+x bilden
+
+$$x = a1 \cdot m2 \cdot x1 + a2 \cdot m1 \cdot x2$$
+
+Mit n Gleichungen:
+
+$$x\equiv_{m1}a1$$
+$$x\equiv_{m2}a2$$
+$$x\equiv_{m3}a3$$
+
+x1, x2 und x3 bestimmen
+
+$$m2 \cdot m3 \cdot x1\equiv_{m1}1$$
+$$m1 \cdot m3 \cdot x2\equiv_{m2}1$$
+$$m1 \cdot m2 \cdot x3\equiv_{m3}1$$
+
+x bilden
+
+$$x = a1 \cdot m2 \cdot m3 \cdot x1 + a2 \cdot m1 \cdot m3 \cdot x2 + a3 \cdot m1 \cdot m2 \cdot x3$$
+
+x kürzen (wenn nötig)
+
+$$x\equiv_{m1 \cdot m2\cdot m3} = x^{gekuerzt} \rightarrow x =  x^{gekuerzt} + z \cdot m1 \cdot m2 \cdot m3 | fuer \; z \in \mathbb{Z}$$
+
+Mit n Gleichungen und Zahlen:
+
+$$x \equiv_{5} 3$$
+$$x \equiv_{7} 5$$
+$$x \equiv_{9} 7$$
+
+x1, x2 und x3 bestimmen
+
+
+$$7 \cdot 9 \cdot x1 \equiv_{5} 1$$
+$$63 \cdot x1 \equiv_{5} 1$$
+$$(2 \cdot 63 = 126 → 126 \equiv_{5}= 1) x1 = 2$$
+$$5 \cdot 9 \cdot x2 \equiv_{7} 1$$
+$$x2 = 5$$
+$$5 \cdot 7 \cdot x3 \equiv_{9} 1$$
+$$x3 = 8$$
+
+x bilden und kürzen
+
+$$x = a1 \cdot m2 \cdot m3 \cdot x1 + a2 \cdot m1 \cdot m3 \cdot x2 + a3 \cdot m1 \cdot m2 \cdot x3$$
+$$x = 3 \cdot 7 \cdot 9 \cdot 2 + 5 \cdot 5 \cdot 9 \cdot 5 + 7 \cdot 5 \cdot 7 \cdot 8 = 3463$$
+$$3463 \equiv_{5 \cdot 7 \cdot 9} = 313 \rightarrow x = 313 + z \cdot 315 | \; für \; z \in \mathbb{Z}$$
