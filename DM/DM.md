@@ -837,10 +837,191 @@ $$x \leq  y :\Leftrightarrow  \exists n \in N (x + n = y).$$
 
 ## Teilbarkeit und Euklidischer Algorithmus
 
+Sind $x, y \in \mathbb{Z}$ ganze Zahlen, so sagen wir, dass $x$ ein Teiler von $y$ ist, falls es ein $k \in \mathbb{Z}$ gibt mit $xk = y$. Wir schreiben in diesem Fall $x|y$. Es gilt also
+
+$$x|y : \Leftrightarrow \exists k \in \mathbb{Z}(y = xk)$$
+
+Mit $T(y)$ bezeichnen wir die Menge aller natürlichen Zahlen, welche Teiler von $y$ sind, also $T(y) = \{x 2 \mathbb{N} | x|y\}$.
+
+Bsp:
+
+* Die Zahl $1$ ist ein Teiler jeder ganzen Zahl $z$, da $1 \cdot z = z. \; 1|\mathbb{Z}$
+* $T(0)= \mathbb{N}$
+
+Die Teilbarkeitsrelation ist reflexiv und transitiv (eine Präordnung) auf der Menge $\mathbb{Z}$, auf der Menge
+$\mathbb{N}$ sogar eine Halbordnung.
+
+**Antisymmetrie auf $\mathbb{N}$:**
+Wir müssen zeigen, dass für natürliche Zahlen $x$ und $y$ aus $x|y$ und $y|x$ folgt, dass $x = y$ gilt. Es
+gelte also $xk = y$ und $x = yr$ für ganze Zahlen $k, r$. Es folgt
+$x = yr = (xk)r = x(kr)$
+und deswegen, dass $kr = 1$ und somit $k = r = 1$, was $x = y$ bedeutet.
+
+Hasse-Diagramme Teilbarkeit: 
+
+![Menge T(30)](./dm_files/Screenshot%202023-01-08%20182600.png){ width=50% }
+![Menge T(90)](./dm_files/Screenshot%202023-01-08%20182629.png){ width=50% }
+
+**Teilen mit Rest**
+
+Sind $n,m \in \mathbb{N} /\{0\}$, dann gibt es eindeutig bestimmte Zahlen $k, r \in \mathbb{N}$, so dass Folgendes gilt:
+
+* $m = kn + r$
+* $r < n$
+
+Wir sagen in diesem Zusammenhang, dass die Zahl $r$ den Rest von der (ganzzahligen) Division von
+m durch $n$ ist.
+
+**kgV und ggT**
+
+$n, m \in \mathbb{Z}$
+
+kleinste gemeinsame Vielfache
+
+$$kgV (n,m) := min\{k \in \mathbb{N} | n|k \wedge m|k \}$$
+
+grösster gemeinsamer Teiler
+
+$$ggT (n,m) := max\{k \in \mathbb{N} | k|n \wedge k|m\}$$
+
+
+**Euklidischer Algorithmus**
+
+Für $n,m \in \mathbb{N}$ mit $0 < n < m$ gilt
+
+$$ggT(n,m) = ggT(n,m - n) = ggT(m,m - n)$$
+
+für $n,m \in \mathbb{N}$ mit $n < m$
+
+$${k \in \mathbb{N} | k|n \wedge k|m} = {k \in \mathbb{N} | k|n \wedge k|(m - n)}$$
+
+$$ggT(n,m) = max{k \in \mathbb{N} | k|n \wedge k|m} = max{k \in \mathbb{N} | k|n \wedge k|(m - n)} = ggT(n,m - n).$$
+
+$$ggT(n,m) = ggT(m,m - n)$$
+
+Aus diesem Beweis erhalten wir direkt einen rekursiven Algorithmus zur Berechnung des ggT.
+Beispielhaft geht man dabei wie folgt vor:
+
+$$ggT(n,m) = ggT(m,m - n)$$
+$$ggT(45, 25) = ggT(25, 20)$$
+$$= ggT(20, 5)$$
+$$= ggT(5, 15)$$
+$$= ggT(5, 10)$$
+$$= ggT(5, 5) = 5.$$
+
+Bei $x > y$ wird zum Berechnen von $ggT(y, x)$ so oft $y$ von $x$ subtrahiert, bis das Resultat kleiner oder
+gleich $y$ ist. Man kann all diese Subtraktionen also durch eine einzige Division mit Rest ersetzen. Die
+beispielhafte Berechnung von $ggT(45, 25)$ können wir nun als 2 Divisionen mit Rest darstellen:
+
+$$45 = 1 \cdot 25 +20$$
+$$25 = 1 \cdot 20 +\underset{ggT(45,25)}{\underbrace{5}}$$
+
+Zusammenfassend stellen wir fest, dass
+
+$$ggT(y, x) = ggT(y,R(x, y))$$
+
+mit
+
+> R(x, y) = der Rest der Division von x durch y | x%y.
+
+
+
+![Bsp. von ggT(27, 96)](./dm_files/Screenshot%202023-01-08%20183818.png){ width=50% }
+
+Zwei ganze Zahlen x, y heissen teilerfremd, wenn $ggT(x, y) = 1$ gilt.
+
+**Lemma von Bézout (Multiplikatives Inverse)**
+
+Sind $x, y \in \mathbb{Z}$ mit $x, y \neq 0$, dann gibt es ganze Zahlen $a, b$ so dass
+
+$$ggT(x, y) = ax + by$$
+
+Bsp.: Wir wollen ganze Zahlen a und b finden, die die Gleichung
+
+$$a \cdot 504 + b \cdot 29 = ggT(504, 29) = 1$$
+
+> $b$ ist dann das Multiplikatives Inverse von $29$ in $\mathbb{Z}/504$
+
+erfüllen
+
+Schritt 1: Sukzessives Teilen mit Rest.
+
+$$504 = 17 \cdot 29 + 11$$
+$$29 = 2 \cdot 11 + 7$$
+$$11 = 1 \cdot 7 + {\color{blue} 4}$$
+$$7 = 1 \cdot 4 + {\color{green} 3}$$
+$${\color{blue} 4} = {\color{green}1 \cdot 3 } + {\color{orange}1} \Rightarrow ggT(504, 29) = 1$$
+
+Schritt 2: Rückwärts einsetzen
+
+$${\color{orange}1} = {\color{blue}4} -{\color{green} 3}$$
+$$= {\color{blue}(11 - 7)} -{\color{green} (7 - 4)}$$
+$$= {\color{blue}((504 - 17 \cdot 29) - (29 - 2 \cdot 11))} - {\color{green}((29 - 2 \cdot 11) - (11 - 7))}$$
+$$= {\color{blue}((504 - 17 \cdot 29) - (29 - 2 \cdot (504 - 17 \cdot 29)))}$$
+$$- {\color{green}((29 - 2 \cdot (504 - 17 \cdot 29)) - ((504 - 17 \cdot 29) - (29 - 2 \cdot 11)))}$$
+$$= {\color{blue} ((504 - 17 \cdot 29) - (29 - 2 \cdot (504 - 17 \cdot 29)))}$$
+$$- {\color{green}((29 - 2 \cdot (504 - 17 \cdot 29)) - ((504 - 17 \cdot 29) - (29 - 2 \cdot (504 - 17 \cdot 29))))}$$
+
+
+Schritt 3: Zusammenfassen (Zählen der Vorkommen von 504 und 29).
+
+$$a = 1 + 2 + 2 +1 + 2 = 8$$
+$$b = -17 - 1 - (2 \cdot 17) - 1 - (2 \cdot 17) - 17 - 1 - (2 \cdot 17) = -139$$
+
+b ist das Multiplikatives Inverse von 29 in $\mathbb{Z}/504$ also; $29-1 = -139 in \mathbb{Z}/504$
+
+
+Test
+
+$$8 \cdot 504 - 139 \cdot 29 = 1$$
+
 
 
 ## Primzahlen
 
+* Eine natürliche Zahl $p \in \mathbb{N}$ ist eine Primzahl, wenn $|T(p)| = 2$ gilt. Die Menge aller Primzahlen bezeichnen wir mit $\mathbb{P}$.
+* Ist $p \in \mathbb{P}$, dann gilt $T(p) = {1, p}$
+* Betrachtet man die Teilbarkeitsrelation auf der Menge $\mathbb{N} \setminus  \{1\}$, dann sind die Primzahlen genau die minimalen Elemente dieser Halbordnung.
+* Es gibt unendlich viele Primzahlen
+* Jede natürliche Zahl grösser als 1 ist das Produkt von endlich vielen Primzahlen
+
+**Lemma von Euklid**
+
+Folgende Aussagen sind für $p \in \mathbb{N}$ mit $p \neq 1$ äquivalent:
+
+1. $\forall n,m \in \mathbb{N} (p|nm\Rightarrow p| n \wedge p|m$ 
+2. $p \in \mathbb{P}$
+
+Jede ganze Zahl $z$ mit $z \notin  \{-1, 1\}$ besitzt einen Primfaktor (einen Teilerm der eine Primzahl ist)
+
+$$\forall z \in \mathbb{Z} (z \notin \{ -1,1\} \Rightarrow T(z) \cap\mathbb{P} \neq \varnothing) $$
+
+Es sei pi jeweils die i-te Primzahl. Für jede
+natürliche Zahl $n >$ 1 gibt es eine eindeutig
+bestimmte, endliche Folge $a_{1}, ..., a_{k}$ von
+natürlichen Zahlen mit $a_{k} \neq 0$, so dass
+
+$$n = \prod_{i=1}^{k}p_{i}^{a_{i}}$$
+
 ## Modulare Arithmetik
+
+Es sei $n \in \mathbb{N}$ und eine Relation $\equiv_{n}$ auf $\mathbb{Z}$ wie folgt:
+
+$$r \equiv_{n} s:\Leftrightarrow n | (r-s)$$
+
+
+Gilt für $r, s \in \mathbb{Z}$ die Relation $r \equiv_{n} s$, dann sagen wir, dass $r$ gleich $s$ modulo $n$ ist und schreiben $r = s$ mod n.
+
+Die Relation $\equiv_{n}$ ist für $\forall n \in \mathbb{N}$ eine Äquivalenzrelation auf $\mathbb{Z}$.
+
+$n \in \mathbb{N} \; und \; z \in \mathbb{Z}$
+
+$[z]_{n} : = \{x \in \mathbb{Z} | x \equiv_{n} z\}$
+
+Die Äquivalenzklasse von z bezüglich der Relation $\equiv_{n}$ nennen wir Restklasse
+
+Die Menge der Restklasse von $\mathbb{Z}$ modulo $n$ bezeichnen wir mit
+
+
 
 ### Chinesicher Restsatz
