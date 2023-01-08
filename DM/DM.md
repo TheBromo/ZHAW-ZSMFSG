@@ -687,13 +687,157 @@ Darstellung des Graphs $(M, \preceq)$.
 
 ## Die grundlegende Struktur der natürlichen Zahlen
 
+$$\mathbb{N} 0 \overset{+1}{\longrightarrow}1\overset{+1}{\longrightarrow}2\overset{+1}{\longrightarrow}3\overset{+1}{\longrightarrow}...$$
+
+Das Prinzip der (vollständigen ) Induktion: Es sei $A(n)$ eine Eigenschaft (ein Prädikat) von natürlichen Zahlen. Aus den beiden Voraussetzungen
+
+* **Induktionsverankerung (I.V.)**: A(0)
+* **Induktionsschritt (I.S.)**: $\forall n \in \mathbb{N} (A(n) \Rightarrow A(n + 1))$ 
+
+folgt die Gültigkeit von $\forall n \in \mathbb{N} (A(n))$
+
+**Induktionsbeweis**
+
+Der Induktionsschritt für ein Prädikat A ist stehts von der Form:
+
+$$\forall n \in \mathbb{N} (\; \underset{Induktionsannahme}{\underbrace{A(n)}} \; \Rightarrow A(n+1 ))$$
+
+Die Stärke des Induktionsargumentes liegt daran, dass man nicht einzeln für alle unendlich vielen
+Zahlen von $\mathbb{N}$ etwas beweisen muss, sondern man kann all diese unendlich vielen Schritte auf zwei
+Schritte zu reduzieren:
+
+1. Schritt (I.V.): E(0).
+2. Schritt (I.S.): Zeige, dass die Eigenschaft E unter Nachfolgern erhalten bleibt. Intuitiv könnte man sagen, dass die Eigenschaft E von jeder natürlichen Zahl auf die nächste “vererbt” wird.
+
+Wir betrachten die Eigenschaft A(n), die besagt, dass die Summe aller natürlichen Zahlen bis:
+
+$$0+1+...+n=\frac{n(n+1)}{2}$$
+
+n halb so gross wie die Zahl n(n + 1) ist:
+
+Wir Beweisen durch Induktion nach n, dass die Eigenschaft A(n) für jede natürliche Zahl n
+zutrifft.
+
+Beweis:
+
+**Induktionsverankerung (I.V.)**
+> n = 0: A(0) 
+> gitl weil:
+> $0=\frac{0 \cdot}{2}$
+> offensichtlich korrekt ist
+**Induktionsschritt (I.S.)**
+> Für den Induktionsschritt müssen wir zeigen, dass für jede natürliche Zahl $n$ mit der
+> Eigenschaft $A(n)$ auch $A(n + 1)$ gilt. Wir nehmen dazu an, dass n eine beliebige solche
+> natürliche Zahl sei und betrachten
+
+![Induktionsschritt](./dm_files/Screenshot%202023-01-08%20174750.png){ width=50% }
+
+**Beweismethode: Der Kleinste Verbrecher**
+
+Die Beweismethode des “kleinsten Verbrechers” geht wie folgt: Will man zeigen, dass alle
+natürlichen Zahlen eine Eigenschaft $E$ haben, dann geht man davon aus, dass wenn dies nicht der Fall
+wäre, es eine kleinste natürliche Zahl $n_{0}$ (den kleinsten Verbrecher) gäbe, die nicht die Eigenschaft $E$
+hat. Führt man diese Annahme zu einem Widerspruch, so hat man die ursprüngliche Behauptung
+bewiesen.
+
+Bsp:
+
+> Wir benützen die Methode des “kleinsten Verbrechers” um zu beweisen, dass jede natürliche
+> Zahl, die mindestens zwei Teiler hat, mindestens einen Primfaktor besitzt (von einer Primzahl
+> geteilt wird).
+> Beweis. Es sei $n_{0}$ die kleinste natürliche Zahl mit mindestens zwei Teilern, die keine
+> Primfaktoren besitzt (der “kleinste Verbrecher”). Da n0 keine Primfaktoren hat, ist $n_{0}$ selbst
+> auch keine Primzahl und es gilt $n_{0} 6= 0$. Es folgt somit, dass ein Teiler $ 1 < x < n_{0}$ von $n_{0}$
+> existieren muss. Da $1 < x$ gilt, hat x mindestens zwei Teiler ($1$ und $x$) und somit, wegen $x < n_{0}$,
+> einen Primfaktor $p$. Da die Teilbarkeitsrelation transitiv ist, muss $p$ aber auch ein Primfaktor
+> von $n_{0}$ sein. Dies ist der gesuchte Widerspruch.
+
 ## Vom Induktionsbeweis zum rekursiven Algorithmus
+
+Mit einem Induktionsbeweis kann mehr als nur eine Argumentationskette, die dazu geeignet ist,
+jemanden von etwas zu überzeugen. Ein Beweis kann einen konkreten Algorithmus (rekursiv)
+vorgeben wie etwas gelöst werden kann. Im Unterricht hatten wir das Beispiel des Spiels «Die Türme
+von Hanoi» (siehe Bild) bei dem wir zuerst einen
+Induktionsbeweis darüber machten, dass das Spiel mit
+beliebig vielen Scheiben gelöst werden kann und haben
+dann daraus einen Java-Code für die Lösungsstrategie
+gezogen (Skript S.88).
 
 ## Rekursive Definitionen
 
+Rekursive Definitionen bezeichnen die mathematisch einwandfreie Art, ein Objekt durch
+Bezugnahme (Selbstreferenz) auf das zu definierende Objekt selbst zu definieren.
+Bsp.: Palindrome
+
+Ein Palindrom ist ein Wort, das rückwärts und vorwärts gelesen gleich lautet. Wie können wir das
+mathematisch darstellen ist die Frage:
+
+* Das Wort $w$ besteht aus einem oder gar keinem Buchstaben (Länge von $w < 2$).
+* Es gibt einen Buchstaben (Zeichen, char) $x$ und ein Palindrom $u$ so, dass $w = xux$ gilt.
+
+**Rechenregel**
+Für alle $n, m, k \in \mathbb{N}$ gelten folgende Rechenregeln:
+
+Addition
+
+* Neutrales Element: 0 + n = n
+* Kommutativität: n + m = m + n
+* Assoziativität: (n + m) + k = n + (m + k)
+* Kürzbarkeit: n + k = m + k ) n = m
+
+Multiplikation
+
+* Absorbtion: 0 · n = 0
+* Neutrales Element: 1 · n = n
+* Kommutativität: n · m = m · n
+* Assoziativität: n · (m · k) = (n · m) · k
+* Distributivität: n · (m + k) = nm + nk
+
+
 # Elementare Zahlentheorie 
 
+$$\mathbb{Z} := \{...,-2,-1,0,1,2,...\}$$
+
+Zusätzliche Rechenregeln auf $\mathbb{Z}$
+
+Für alle $r, s, z \in Z$ gelten folgende Gleichungen.
+
+Gleichung                                   Kommentar
+----------------------                      ------------------
+$-1 \cdot z = -z$
+$-(-z) = z$
+$-z + z = 0$                                Inverse Elemente bezüglich +
+$0 \cdot z = 0$                             Absorbtion
+$1 \cdot z = z$                             Neutrales Element bezüglich $\cdot$
+$0 + z = z$                                 Neutrales Element bezüglich +
+$r(sz) = (rs)z$                             Assoziativität von $\cdot$
+$r + (s + z) = (r + s) + z$                 Assoziativität von +
+$rs = sr$                                   Kommutativität von $\cdot$
+$r + s = s + r$                             Kommutativität von +
+$r(s + z) = rs + sz$                        Distributivität
+$rx = ry \Rightarrow x = y \wedge r = 0$    Kürzbarkeit
+
+**Substraktion**
+$$-: \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}$$
+
+durch
+
+$$x - y := x + (-y)$$
+
+**Betragsfunktion**
+
+$$|\cdot | : \mathbb{Z} \rightarrow \mathbb{N}$$
+
+durch
+
+$$|z|= \left\{\begin{matrix}z & falls z \in \mathbb{N}\\ -1 \cdot z & sonst\end{matrix}\right.$$
+
+**Relation**
+$$x \leq  y :\Leftrightarrow  \exists n \in N (x + n = y).$$
+
 ## Teilbarkeit und Euklidischer Algorithmus
+
+
 
 ## Primzahlen
 
