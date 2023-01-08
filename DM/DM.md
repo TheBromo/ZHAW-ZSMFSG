@@ -653,6 +653,36 @@ Reflexiv-
 transitiver             Die kleinste Relation, die $R^{+}$ enthält und reflexiv ist, nennt man den
 Abschluss $R^{+}$       *reflexivtransitiven Abschluss* von R, sie wird mit $R^{\ast }$ bezeichnet.
 
+Es sei $M$ eine endliche Menge und $G = (M,E)$ ein DAG. Eine lineare
+Ordnung $\preceq 1 \subseteq  M \times M$ ist eine topologische Sortierung von $G$, wenn
+für alle $a, b \in M$ das folgende gilt.
+
+$$aE^{\ast}b \Rightarrow  a \preceq b $$
+
+**Hasse-Diagramme**
+
+Es sei $\preceq$ eine Halbordnung auf einer Menge $M$. Das Hasse-Diagramm von $R$ ist eine vereinfachte
+Darstellung des Graphs $(M, \preceq)$.
+
+*   Die Richtung eines Pfeiles $a \rightarrow b$ für Elemente $a, b \in M$ wird dadurch zum Ausdruck gebracht, dass sich der Knoten $b$ oberhalb von $a$ befindet.
+*   Pfeile zwischen zwei Punkten $a, b$ werden gelöscht, wenn es einen weiteren Punkt $c$ mit $a \preceq c \preceq b$ gibt
+*   Pfeile, die von einem Punkt auf denselben Punkt zeigen (Schleifen), werden weggelassen.
+
+
+![Eine Darstellung als Hasse-Diagramm von der Relation $\leq$ auf der Menge{1, . . . 5}.](./dm_files/Screenshot%202023-01-08%20170913.png){ width=50% }
+
+![Teilbarkeitsrelation auf der Menge Teilermenge von 28 ä({1, 2, 4, 7, 14, 28}) Maximales Element: 28 Minimales Element: 1 Bsp. für unvergleichbare Elemente:2, 7 oder 4, 14](./dm_files/Screenshot%202023-01-08%20171011.png){ width=50% }
+
+![Die Teilmengenrelation $\subseteq$ auf der Menge P({a,b, c})](./dm_files/Screenshot%202023-01-08%20171104.png){ width=50% }
+
+![Halbordnung auf der Menge {0, . . . , 7} Maximale Elemente: 4, 7 Minimale Elemente: 0, 1, 3 Bsp. für unvergleichbare Elemente: 1, 0, 3 oder 4, 5, 6](./dm_files/Screenshot%202023-01-08%20171202.png){ width=50% }
+
+![Graph G = ({12, 13, 14, 18, 112}, $\preceq$ )](./dm_files/Screenshot%202023-01-08%20171305.png){ width=50% }
+
+![Relation als Menge:{(13, 13), (13, 112), (12, 12), (12, 112), (12, 14),(12, 18), (14, 14), (14, 112), (14, 18), (18, 18),(112, 112)}](./dm_files/Screenshot%202023-01-08%20171400.png){ width=50% }
+
+![Die Ordnung $\leq$ auf $\mathbb{N}$ ](./dm_files/Screenshot%202023-01-08%20171502.png){ width=50% }
+
 # Rekursive Strukturen und die natürlichen Zahlen
 
 ## Die grundlegende Struktur der natürlichen Zahlen
