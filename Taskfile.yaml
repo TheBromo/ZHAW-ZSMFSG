@@ -1,6 +1,6 @@
 version: '3'
 vars:
-  OPTIONS: -V linkcolor:blue  -V geometry:a4paper  -V geometry:margin=1cm  -V mainfont="DejaVu Serif"     -V monofont="DejaVu Sans Mono"  
+  OPTIONS: -V linkcolor:blue -V geometry:a4paper -V geometry:margin=1cm -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono"  
 
 tasks:
   dm:
