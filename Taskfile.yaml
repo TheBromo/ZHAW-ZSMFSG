@@ -1,0 +1,13 @@
+version: '3'
+vars:
+  OPTIONS: -V linkcolor:blue  -V geometry:a4paper  -V geometry:margin=1cm  -V mainfont="DejaVu Serif"     -V monofont="DejaVu Sans Mono"  
+
+tasks:
+  dm:
+    dir: ./dm
+    cmds:
+    - pandoc DM.md -o DM.pdf {{.OPTIONS}}
+  ana:
+    dir: ./ANA
+    cmds:
+    - pandoc Ana.md -o Ana.pdf {{.OPTIONS}}

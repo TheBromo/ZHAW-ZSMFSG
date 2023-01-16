@@ -283,7 +283,7 @@ $X = Y \Leftrightarrow \forall z (z \in X \Leftrightarrow z \in Y)$ Zwei Mengen 
 
 ### Explizite Schreibweise
 
-![Wichtige Zahlenmengen](./dm_files/Screenshot%202023-01-07%20171042.png){ width=50% }
+
 
 Bezeichnung                                                                 Formel
 ------------                                                                -------------------
@@ -293,7 +293,8 @@ $\mathbb{Z}$                                                                $\{�
 
 ### Teilmengen
 
-![Veranschaulichung der Mengenbildung durch prädikative Schreibweise.](./dm_files/Screenshot%202023-01-07%20180117.png){ width=50% }
+![Veranschaulichung der Mengenbildung durch prädikative Schreibweise.](./dm_files/Screenshot%202023-01-07%20180117.png){ width=20% }
+![Wichtige Zahlenmengen](./dm_files/Screenshot%202023-01-07%20171042.png){ width=20% }
 
 Zeichen         Beschreibung                            Equivalent
 -----------     -------------                           -------------
@@ -443,7 +444,8 @@ Ist $R$ eine n-stellige Relation und gilt $(x_{1}, ... , x_{n}) \in R$, dann sag
 
 **Relationsgraphen**
 
-$R = \{(x, y) | x, y \in N \wedge x, y < 100 \wedge x + y$ ist ein Vielfaches von $7\}$ ![Visualisierung](./dm_files/Screenshot%202023-01-08%20000346.png){ width=50% }
+$R = \{(x, y) | x, y \in N \wedge x, y < 100 \wedge x + y$ ist ein Vielfaches von $7\}$
+![Visualisierung](./dm_files/Screenshot%202023-01-08%20000346.png){ width=20% }
 
 **Gerichteter Graph**
 
@@ -451,7 +453,7 @@ Ein (gerichteter) Graph ist ein Paar $G = (V,E)$ bestehend aus einer Menge $V$ (
 
 $V = \{1, 2, 3, 4\} E = \{(1, 1),(1, 2),(1, 3),(1, 4),(2, 2),(2, 4),(3, 3),(4, 4)\}$
 
-![Visualisierung](./dm_files/Screenshot%202023-01-08%20001105.png){ width=50% }
+![Visualisierung](./dm_files/Screenshot%202023-01-08%20001105.png){ width=20% }
 
 ### Funktionen
 
@@ -493,7 +495,7 @@ Wenn eine Funktion Injektiv und Surjektiv ist, dasnn ist sie bijektiv
 
 Surjektivität und Injektivität lassen sich gut anhand von “Gegenbeispielen” veranschaulichen. Ist die Funktion $f : A \rightarrow B$ durch
 
-![Visualisierung](./dm_files/Screenshot%202023-01-08%20003726.png){ width=50% }
+![Visualisierung](./dm_files/Screenshot%202023-01-08%20003726.png){ width=20% }
 
 * Die Funktion ist wegen $f(x_{1}) = f(x_{3})$ nicht injektiv.
 * Die Funktion ist wegen $y_{4} \in B$ nicht surjektiv auf $B$.
@@ -532,7 +534,7 @@ Abzählbar unendlich     Die Menge $X$ heisst abzählbar unendlich, wenn X abzä
 * Jede Vereinigung von abzählbar vielen abzählbaren Mengen ist abzählbar. Konkret jede Vereinigung der Form: ist abzählbar, wenn alle $A_{i}$ abzählbar sind.
 
 
-![Anstelle eines formalen Beweises, skizzieren wir eine Abzählung aller Paarevon natürlichen Zahlen wie folgt](./dm_files/Screenshot%202023-01-08%20010409.png){ width=50% }
+![Anstelle eines formalen Beweises, skizzieren wir eine Abzählung aller Paarevon natürlichen Zahlen wie folgt](./dm_files/Screenshot%202023-01-08%20010409.png){ width=20% }
 
 
 ### Ordnungs- und Äquivalenzrelationen
@@ -594,7 +596,7 @@ Ist die Relation eine Äquivalenzrelation?
 
 Die Äquivalenzklassen modulo der Relation $\equiv_{5}$ heissen Restklassen modulo 5
 
-![Restklassen Modulo5](./dm_files/Screenshot%202023-01-08%20154105.png){ width=100% }
+![Restklassen Modulo5](./dm_files/Screenshot%202023-01-08%20154105.png){ width=30% }
 
 **Lemma 3**
 Ist $\sim$ eine Äquivalenzrelation auf einer Menge $X$ und gilt $x,y \in X$ mit $x \sim y$, dann gilt $[x] \sim = [y]\sim$ . Mit
@@ -624,14 +626,19 @@ R = binäre Relation / M = Menge
 
 Name                    Beschreibung
 ---------               -----------------------------
-R-unvergleichbar        Zwei Elemente $x, y \in M$ heissen R-unvergleichbar, falls weder $xRy$ noch $yRx$ gilt.
-R-minimal               Ein Element $x \in X$ einer Teilmenge $X  \subseteq M$ von $M$ heisst R-minimal in $X$, falls es kein anderes Element $y \in X$ mit $yRx$ gibt.
-R-maximal               Ein Element $x \in X$ einer Teilmenge $X \subseteq M$ von $M$ heisst R-maximal in $X$, falls es kein anderes Element $y \in X$ mit $xRy$ gibt.
+R-unvergleichbar        Zwei Elemente $x, y \in M$ heissen R-unvergleichbar,
+                         falls weder $xRy$ noch $yRx$ gilt.
+R-minimal               Ein Element $x \in X$ einer Teilmenge $X  \subseteq M$ 
+                        von $M$ heisst R-minimal in $X$, falls es kein anderes 
+                        Element $y \in X$ mit $yRx$ gibt.
+R-maximal               Ein Element $x \in X$ einer Teilmenge $X \subseteq M$ 
+                        von $M$ heisst R-maximal in $X$, falls es kein anderes 
+                        Element $y \in X$ mit $xRy$ gibt.
 
 *   Die minimalen Elemente von $M$ sind $a$ und $x$
 *   Das einzige maximale Element von $M$ ist $z$.
 
-![Relationen](./dm_files/Screenshot%202023-01-08%20160324.png){ width=50% }
+![Relationen](./dm_files/Screenshot%202023-01-08%20160324.png){ width=30% }
 
 Ordnung                     Relation    
 -----------                 --------------------------
@@ -668,20 +675,20 @@ Darstellung des Graphs $(M, \preceq)$.
 *   Pfeile zwischen zwei Punkten $a, b$ werden gelöscht, wenn es einen weiteren Punkt $c$ mit $a \preceq c \preceq b$ gibt
 *   Pfeile, die von einem Punkt auf denselben Punkt zeigen (Schleifen), werden weggelassen.
 
+1. Eine Darstellung als Hasse-Diagramm von der Relation $\leq$ auf der Menge{1, . . . 5}.
+2. Teilbarkeitsrelation auf der Menge Teilermenge von 28 ä({1, 2, 4, 7, 14, 28}) Maximales Element: 28 Minimales Element: 1 Bsp. für unvergleichbare Elemente:2, 7 oder 4, 14
+3. Die Teilmengenrelation $\subseteq$ auf der Menge P({a,b, c})
+4. Halbordnung auf der Menge {0, . . . , 7} Maximale Elemente: 4, 7 Minimale Elemente: 0, 1, 3 Bsp. für unvergleichbare Elemente: 1, 0, 3 oder 4, 5, 6
+5. Graph G = ({12, 13, 14, 18, 112}, $\preceq$ )
+6. Relation als Menge:{(13, 13), (13, 112), (12, 12), (12, 112), (12, 14),(12, 18), (14, 14), (14, 112), (14, 18), (18, 18),(112, 112)}
+7. Die Ordnung $\leq$ auf $\mathbb{N}$ 
 
-![Eine Darstellung als Hasse-Diagramm von der Relation $\leq$ auf der Menge{1, . . . 5}.](./dm_files/Screenshot%202023-01-08%20170913.png){ width=50% }
-
-![Teilbarkeitsrelation auf der Menge Teilermenge von 28 ä({1, 2, 4, 7, 14, 28}) Maximales Element: 28 Minimales Element: 1 Bsp. für unvergleichbare Elemente:2, 7 oder 4, 14](./dm_files/Screenshot%202023-01-08%20171011.png){ width=50% }
-
-![Die Teilmengenrelation $\subseteq$ auf der Menge P({a,b, c})](./dm_files/Screenshot%202023-01-08%20171104.png){ width=50% }
-
-![Halbordnung auf der Menge {0, . . . , 7} Maximale Elemente: 4, 7 Minimale Elemente: 0, 1, 3 Bsp. für unvergleichbare Elemente: 1, 0, 3 oder 4, 5, 6](./dm_files/Screenshot%202023-01-08%20171202.png){ width=50% }
-
-![Graph G = ({12, 13, 14, 18, 112}, $\preceq$ )](./dm_files/Screenshot%202023-01-08%20171305.png){ width=50% }
-
-![Relation als Menge:{(13, 13), (13, 112), (12, 12), (12, 112), (12, 14),(12, 18), (14, 14), (14, 112), (14, 18), (18, 18),(112, 112)}](./dm_files/Screenshot%202023-01-08%20171400.png){ width=50% }
-
-![Die Ordnung $\leq$ auf $\mathbb{N}$ ](./dm_files/Screenshot%202023-01-08%20171502.png){ width=50% }
+![](./dm_files/Screenshot%202023-01-08%20170913.png){ width=20% }![](./dm_files/Screenshot%202023-01-08%20171011.png){ width=20% }
+![](./dm_files/Screenshot%202023-01-08%20171104.png){ width=20% }
+![](./dm_files/Screenshot%202023-01-08%20171202.png){ width=20% }
+![](./dm_files/Screenshot%202023-01-08%20171305.png){ width=20% }
+![](./dm_files/Screenshot%202023-01-08%20171400.png){ width=20% }
+![](./dm_files/Screenshot%202023-01-08%20171502.png){ width=20% }
 
 # Rekursive Strukturen und die natürlichen Zahlen
 
@@ -730,7 +737,7 @@ Beweis:
 > Eigenschaft $A(n)$ auch $A(n + 1)$ gilt. Wir nehmen dazu an, dass n eine beliebige solche
 > natürliche Zahl sei und betrachten
 
-![Induktionsschritt](./dm_files/Screenshot%202023-01-08%20174750.png){ width=50% }
+![Induktionsschritt](./dm_files/Screenshot%202023-01-08%20174750.png){ width=20% }
 
 **Beweismethode: Der Kleinste Verbrecher**
 
@@ -858,9 +865,10 @@ $x = yr = (xk)r = x(kr)$
 und deswegen, dass $kr = 1$ und somit $k = r = 1$, was $x = y$ bedeutet.
 
 Hasse-Diagramme Teilbarkeit: 
+1. Menge T(30)
+2. Menge T(90)
 
-![Menge T(30)](./dm_files/Screenshot%202023-01-08%20182600.png){ width=50% }
-![Menge T(90)](./dm_files/Screenshot%202023-01-08%20182629.png){ width=50% }
+![](./dm_files/Screenshot%202023-01-08%20182600.png){ width=20% }![](./dm_files/Screenshot%202023-01-08%20182629.png){ width=20% }
 
 **Teilen mit Rest**
 
@@ -926,7 +934,7 @@ mit
 
 
 
-![Bsp. von ggT(27, 96)](./dm_files/Screenshot%202023-01-08%20183818.png){ width=50% }
+![Bsp. von ggT(27, 96)](./dm_files/Screenshot%202023-01-08%20183818.png){ width=20% }
 
 Zwei ganze Zahlen x, y heissen teilerfremd, wenn $ggT(x, y) = 1$ gilt.
 
@@ -1031,8 +1039,8 @@ $[x]_{n} \cdot [y]_{n} := [xy]_{n}$
 
 Verknüpfungstabelle der Addition in $\mathbb{Z}$/6:
 
-![Verknüpfungstabelle der Addition in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200740.png){ width=50% }
-![Verknüpfungstabelle der Multiplikation in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200846.png){ width=50% }
+![Verknüpfungstabelle der Addition in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200740.png){ width=20% }
+![Verknüpfungstabelle der Multiplikation in $\mathbb{Z}$/6](./dm_files/Screenshot%202023-01-08%20200846.png){ width=20% }
 
 Beispiel 61 (Rechnen mit Uhrzeiten). Rechnen mit Uhrzeiten (volle Stunden einer
 Analoguhr) entspricht mit Restklassen Modulo 12 zu rechnen
