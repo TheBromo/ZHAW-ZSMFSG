@@ -642,12 +642,17 @@ R-maximal               Ein Element $x \in X$ einer Teilmenge $X \subseteq M$
 
 Ordnung                     Relation    
 -----------                 --------------------------
-Präordnung                  $R$ ist eine Präordnung auf $M$, wenn $R$ *reflexiv* und *transitiv* ist
-Halbordnung                 $R$ ist eine Halbordnung auf $M$, wenn $R$ *reflexiv*, *antisymmetrisch* und *transitiv* ist
-Totale/                     $R$ ist eine totale oder lineare Ordnung auf $M$, wenn $R$ eine Halbordnung ist und
-lineare Ordnung             keine R-unvergleichbaren Elemente existieren.
-Wohlordnung                 $R$ ist eine Wohlordnung auf $M$, wenn $R$ eine totale Ordnung auf $M$ ist so, dass
-                            jede Teilmenge $X \neq \varnothing$ von $M$ (mindestens) ein R-minimales Element enthält
+Präordnung                  $R$ ist eine Präordnung auf $M$, 
+                            wenn $R$ *reflexiv* und *transitiv* ist
+Halbordnung                 $R$ ist eine Halbordnung auf $M$,
+                            wenn $R$ *reflexiv*, *antisymmetrisch* und *transitiv* ist
+Totale/                     $R$ ist eine totale oder lineare Ordnung auf $M$,
+lineare Ordnung             wenn $R$ eine Halbordnung ist und
+                            keine R-unvergleichbaren Elemente existieren.
+Wohlordnung                 $R$ ist eine Wohlordnung auf $M$, wenn $R$ 
+                            eine totale Ordnung auf $M$ ist so, dass
+                            jede Teilmenge $X \neq \varnothing$ von $M$
+                            (mindestens) ein R-minimales Element enthält
 
 * Die Relation $\leq$ ist eine totale Ordnung auf die Menge $\mathbb{R}$ und auch auf die Menge $\mathbb{Z}$, weil sie kein kleinstes Element hat. Die Relation $\leq$ auf die Menge $\mathbb{N}$ ist eine **Wohlordnung**.
 * Die Teilerrelation T auf der Menge $\mathbb{Z}$ ist eine **Halbordnung** aber keine totale Ordnung. Die Elemente 7 und 5 sind T-unvergleichbar
@@ -754,7 +759,7 @@ Bsp:
 > geteilt wird).
 > Beweis. Es sei $n_{0}$ die kleinste natürliche Zahl mit mindestens zwei Teilern, die keine
 > Primfaktoren besitzt (der “kleinste Verbrecher”). Da n0 keine Primfaktoren hat, ist $n_{0}$ selbst
-> auch keine Primzahl und es gilt $n_{0} 6= 0$. Es folgt somit, dass ein Teiler $ 1 < x < n_{0}$ von $n_{0}$
+> auch keine Primzahl und es gilt $n_{0} 6= 0$. Es folgt somit, dass ein Teiler $1 < x < n_{0}$ von $n_{0}$
 > existieren muss. Da $1 < x$ gilt, hat x mindestens zwei Teiler ($1$ und $x$) und somit, wegen $x < n_{0}$,
 > einen Primfaktor $p$. Da die Teilbarkeitsrelation transitiv ist, muss $p$ aber auch ein Primfaktor
 > von $n_{0}$ sein. Dies ist der gesuchte Widerspruch.

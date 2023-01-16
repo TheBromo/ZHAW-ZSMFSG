@@ -5,10 +5,6 @@ author:
 keywords: [INCO, pain]
 ...
 
-\newpage
-
-
-
 # Zahlensysteme
 
 ## Binär & Hexadezimal
@@ -18,7 +14,7 @@ keywords: [INCO, pain]
 Ein Zahlensystem mit Basis 2 heisst 2-er System,
 Binärsystem oder Dualsystem
 
-![Binär Beispiel](./inco_files/Screenshot%202022-12-29%20210012.png)
+![Binär Beispiel](./inco_files/Screenshot%202022-12-29%20210012.png){ width=50% }
 
 **Grössen**
 
@@ -41,7 +37,7 @@ Beispiel: $AF3C_{h}$
 
 Beispiel:
 
-![Hexadezimal Beispiel](./inco_files/Screenshot%202022-12-29%20211825.png)
+![Hexadezimal Beispiel](./inco_files/Screenshot%202022-12-29%20211825.png){ width=50% }
 
 ### Tabelle
 10er System                 2er System      16er System                        
@@ -81,28 +77,13 @@ Folgende Probleme können auftreten:
 Hierbei geht es darum wo der Umschlagspubkt im Format definiert wurde. (Hier 4 Bit's)
 Hier ein paar Möglichkeiten:
 
-![Darstellung negativer Zahlen](./inco_files/Screenshot%202022-12-29%20213055.png){ width=50% }
+![Darstellung negativer Zahlen](./inco_files/Screenshot%202022-12-29%20213055.png){ width=20% }
 ![Signed und Unsigned Bits](./inco_files/Screenshot%202022-12-29%20213650.png){ width=50% }
 
 
 # Digitaltechnik
 
 ## Kombinatorik
-* Einfache Logische Operationen
-  - Symbole / Logische Gleichungen / Warheitstabellen
-
-### Einfache logische Operationen
-
-**Inverter:** $Z = !A$
-**Buffer:** $Z = A$
-![Inverter Gate](./inco_files/Screenshot%202022-12-30%20112012.png){ width=20% }
-![Buffer Gate](./inco_files/Screenshot%202022-12-30%20112216.png){ width=20% }
-
-
-A $$!A$$  
-- ------
-0 1     
-1 0
 
 **AND:** $Z = A \& B$
 **OR:** $Z = A \# B$
@@ -168,17 +149,16 @@ Ausgang Q übertragen,
 wenn C von 0 auf 1 wechselt. 
 
 ![D-Flip-Flop visualisierung](./inco_files/Screenshot%202022-12-30%20124902.png){ width=20% }
+![Visualisierung der werte Weitergabe](./inco_files/Screenshot%202022-12-30%20125045.png){ width=50% }
 
 Hierbei wird bei jedem Takt (*C*) der input von *D* zu *Q* weitergegeben 
-
-![Visualisierung der werte Weitergabe](./inco_files/Screenshot%202022-12-30%20125045.png){ width=50% }
 
 **Verwendungen**
 
 * Finite State Machine (Speicherzellen stellen den Systemzustand dar)
 * Zähler (Neuer Zustand ist vorgegeben durch jetzigen Zustand.)
 * Schieberegister (Mehrere in Reihe geschaltete FFs.)
-\newpage
+
 
 # Entropie, Information und Quellcodierungsthemen
 
@@ -238,7 +218,7 @@ $$R = L - H $$
 
 * Symbol-Wahrscheinlichkeiten $P(x_{n})$ müssen bekannt sein
 
-![Huffman Encoding visualisierung](./inco_files/Screenshot%202022-12-30%20144748.png){ width=100% }
+![Huffman Encoding visualisierung](./inco_files/Screenshot%202022-12-30%20144748.png){ width=80% }
 
 ## LZ77
 
@@ -251,7 +231,7 @@ $$R = L - H $$
 > Im Such-Buffer wird die längste Übereinstimmung mit dem Vorschau-Buffer gesucht und als Token ausgegeben.
 > Keine Übereinstimmung: Token (0, 0, Zeichen) wird verwendet.
 
-![LZ77 Beispiel](./inco_files/An-example-of-LZ77-encoding.png){ width=100% }
+![LZ77 Beispiel](./inco_files/An-example-of-LZ77-encoding.png){ width=80% }
 
 ## LZW
 
@@ -314,7 +294,7 @@ $$P_{> F,N} = P_{\leq F,N}-1$$
 
 > Die K Informationsbits erscheinen im Codewort am einem Stück
 
-![Blockcode](./inco_files/Screenshot%202022-12-30%20165447.png){ width=100% }
+![Blockcode](./inco_files/Screenshot%202022-12-30%20165447.png){ width=60% }
 
 > Systematische Blockcodes lassen sich besonders einfach decodieren: Es müssen lediglich die Fehlerschutzbits entfernt werden.
 
@@ -324,7 +304,7 @@ $$P_{> F,N} = P_{\leq F,N}-1$$
 > von 2 beliebigen Codewörtern (inklusive des selben) wieder ein gültiges
 > Codewort:
 
-![Linearer Code](./inco_files/Screenshot%202022-12-30%20170328.png){ width=100% }
+![Linearer Code](./inco_files/Screenshot%202022-12-30%20170328.png){ width=60% }
 
 > Jeder lineare Code muss zwingend das Null-Codewort (000) enthalten
 > Anmerkung: Mathematisch nennt man die bitweise Exor-Verknüpfung eine
@@ -336,7 +316,7 @@ Bei linearen (N,K)-Blockcodes ist $d_{min}$ die minimale HammingDistanz der gül
 
 > Die zyklische Verschiebung eines Codeworts gibt wieder ein Codewort:
 
-![Zyklischer Code](./inco_files/Screenshot%202022-12-30%20171737.png){ width=100% }
+![Zyklischer Code](./inco_files/Screenshot%202022-12-30%20171737.png){ width=60% }
 
 > Ein linearer, zyklischer Blockcode wird später eingehend besprochen (siehe Abschnitt CRC).
 
@@ -349,7 +329,7 @@ Bei linearen (N,K)-Blockcodes ist $d_{min}$ die minimale HammingDistanz der gül
 
 * Hamming-Distanz ist die Anzahl der wechselnden Bits von einem gültigen Code zum nächsten gültigen Code
 
-![Visualisierung Hamming Distanz](./inco_files/Screenshot%202022-12-30%20164616.png){ width=100% }
+![Visualisierung Hamming Distanz](./inco_files/Screenshot%202022-12-30%20164616.png){ width=60% }
 
 Das Hamming-Gewicht $w_{H}(c_{j})$
 
@@ -477,8 +457,8 @@ $$
 \end{bmatrix}
 }$$
 
-![Indexes vom Syndrom](./inco_files/Screenshot%20from%202023-01-01%2015-29-00.png){ width=50% }
-![Korrektur](./inco_files/Screenshot%20from%202023-01-01%2015-31-00.png){ width=50% }
+![Indexes vom Syndrom](./inco_files/Screenshot%20from%202023-01-01%2015-29-00.png){ width=30% }
+![Korrektur](./inco_files/Screenshot%20from%202023-01-01%2015-31-00.png){ width=30% }
 
 ### Erstellen Generator / Paritycheck Matrix
 
