@@ -91,15 +91,6 @@ $\exists x \in K A(x) \Leftrightarrow \exists x(x \in K \wedge A(x))$           
 
 **Warnung:** Wir haben keine Distributionsregel mit Quantoren und Junktoren.
 
-Gleichung                                                   Beschreibung
--------------------------------------------------           ---------------------------------------
-$\exists x A(x)$                                        
-$\Leftrightarrow \neg \neg \exists x A(x)$                  (Doppelte Negation)
-$\Leftrightarrow \neg (\neg \exists x A(x))$                 
-$\Leftrightarrow \neg (\neg \exists \neg( \neg x A(x)))$    (Doppelte Negation)
-$\Leftrightarrow \neg (\forall \neg  x A(x))$               (Vertauschungsregel)
-
-
 ## Grundlegende Beweistechniken
 
 ### Direkter Beweis einer Implikation
@@ -147,40 +138,9 @@ Widerspruch zur Annahme steht.
 * Die Menge der Variablen Bezeichnen wir mit $\mathbb{V}$ 
 * Die Menge der aussagelogischen Formeln Bezeichnen wir mit $\mathbb{F}$
 
-
-**Definition 8.** Es sei eine Belegung $B$ gegeben. Die Funktion $\widehat{B}$ ist die Funktion, die
-jeder aussagenlogischen Formel ihren Wahrheitswert bezüglich der Belegung $B$ zuordnet,
-d.h. die Funktion $\widehat{B} : F \rightarrow  \{false,true\}$ ist gegeben durch:
-
-- $\widehat{B}(\perp) = false$ und $\widehat{B}(T) = true$
-- Für beliebige Variablen $v$ gilt $\widehat{B}(v) = B(v)$ .
-- Für beliebige Formeln F und G gilt
-    * $\widehat{B}(F \wedge G)=\left\{\begin{matrix}true & falls\:  \widehat{B}(F) = true\:  und\: \widehat{B}(G) = true \\ false & sonst.\end{matrix}\right.$
-- Für beliebige Formeln $F$ und $G$ gilt
-    * $\widehat{B}(F \vee G)=\left\{\begin{matrix}true & falls\:  \widehat{B}(F) = true\:  und\: \widehat{B}(G) = true \\ false & sonst.\end{matrix}\right.$
-- Für beliebige Formeln $F$ gilt
-    * $\widehat{B}( \neg F )=\left\{\begin{matrix}true & falls\:  \widehat{B}(F) = false\\ false & sonst.\end{matrix}\right.$
-- Für beliebige Formeln $F$ und $G$ gilt $\widehat{B}(F \rightarrow G) = \widehat{B}(\neg F \vee G)$.
-
 ## Semantik der Aussagenlogik
 
 ### Wahrheitstabellen 
-
-In einer Wahrheitstabelle einer Formel $F$ entspricht jede Spalte einer Teilformel von $F$ und jede Zeile einer Belegung der in $F$ vorkommenden Variablen. Bsp.:
-
-Wahrheitstabelle von $p_{0} → (q \wedge p_{1})$ :
-
-
-$p_{0}$ $q$ $p_{1}$ $q \wedge p_{1}$    $p_{0} \rightarrow (q \wedge p_{1}$
-------- --- ------- ----------------    -----------------------------------
-0       0   0       0                   1
-0       0   1       1                   1
-0       1   0       1                   1
-0       1   1       1                   1
-1       0   0       0                   0
-1       0   1       1                   1
-1       1   0       1                   1
-1       1   1       1                   1
 
 Man kann Wahrheitstabellen auch zur Darstellung von logischen Operatoren $^{2}$ benützen. Beispielhaft geben wir die Wahrheitstabellen für die Operatoren
 (Junktoren) $\wedge, \vee, \rightarrow, \neg$ an.
@@ -191,13 +151,6 @@ $F$ $G$ $F\wedge G$ $F\vee G$   $F\rightarrow G$
 0   1   0           1           1
 1   0   0           1           0
 1   1   1           1           1
-
-
-$F$ $\neg F$
---  -------
-0   1
-1   0
-
 
 ### Semantische Eigenschaften
 
@@ -218,17 +171,11 @@ Sind $F$ und $G$ äquivalente Formeln, dann schreiben wir $F \equiv G$.
 
 Beispiele:
 
-**Allgemeingültig Formeln**
+**Allgemeingültig Formeln:** $p \vee \neg p \qquad p \rightarrow (p\rightarrow p) \qquad F \rightarrow F$
 
-$$p \vee \neg p \qquad p \rightarrow (p\rightarrow p) \qquad F \rightarrow F$$
+**Erfüllbare nicht allgemeingültige Formeln:** $p_{1} \wedge (p_{2} \wedge p_{3}) \qquad p{3} \qquad p \rightarrow q$
 
-**Erfüllbare nicht allgemeingültige Formeln**
-
-$$p_{1} \wedge (p_{2} \wedge p_{3}) \qquad p{3} \qquad p \rightarrow q $$
-
-**Unerfüllbare Formeln**
-
-$$(p_{1} \rightarrow \neg p_{1})  \wedge (\neg p_{1} \rightarrow p_{1}) \qquad \neg p_{3} \wedge p_{3}\qquad \neg(F\rightarrow F)$$
+**Unerfüllbare Formeln:** $(p_{1} \rightarrow \neg p_{1})  \wedge (\neg p_{1} \rightarrow p_{1}) \qquad \neg p_{3} \wedge p_{3}\qquad \neg(F\rightarrow F)$
 
 ### Normalformen NNF | DNF | KNF
 
@@ -236,24 +183,17 @@ Literale sind atomare Formeln oder negierte atomare Formeln.
 
 Eine aussagenlogische Formel ist:
 
-* In Negationsnormalform(NNF), wenn alle Negationen in Literalen vorkommen und wenn keine Implikationen ($\rightarrow$) vorkommen.
+In **Negationsnormalform(NNF)**, wenn alle Negationen in Literalen vorkommen und wenn keine Implikationen ($\rightarrow$) vorkommen.
 
-* In disjunktiver Normalform(DNF), wenn sie von der Form $$(L_{1,1} \wedge L_{1,2} \wedge ...) \vee (L_{2,1} \wedge L_{2,2} \wedge ...) \vee (L_{3,1} \wedge L_{3,2} \wedge ...)...$$ mit Literalen $L_{i,j}$ ist.
+In **disjunktiver Normalform(DNF)**, 
+$(L_{1,1} \wedge L_{1,2} \wedge ...) \vee (L_{2,1} \wedge L_{2,2} \wedge ...) \vee (L_{3,1} \wedge L_{3,2} \wedge ...)$
 
-* In konjunktiver Normalform(KNF), wenn sie von der Form $$(L_{1,1} \vee L_{1,2} \vee ...) \wedge (L_{2,1}\vee L_{2,2} \vee ...)\wedge (L_{3,1} \vee L_{3,2} \vee ...)...$$  mit Literalen $L_{i,j}$ ist.
+**konjunktiver Normalform(KNF)**,
+$(L_{1,1} \vee L_{1,2} \vee ...) \wedge (L_{2,1}\vee L_{2,2} \vee ...)\wedge (L_{3,1} \vee L_{3,2} \vee ...)...$
 
-
-$$\neg(p \vee q)$$
-
-ist in keiner der oben eingeführten Normalformen. Die Formel
-
-$$(\neg p \vee q) \wedge ((p\wedge p_{1}) \vee (p_{2} \wedge p_{3})) $$
-
-ist in NNF aber weder in DNF noch in KNF. Die Formel
-
-$$p \vee q$$
-
-ist in NNF, KNF und DNF.
+* $\neg(p \vee q)$ keine
+* $(\neg p \vee q) \wedge ((p\wedge p_{1}) \vee (p_{2} \wedge p_{3}))$ ist in NNF aber weder in DNF noch in KNF
+* $p \vee q$ ist in NNF, KNF und DNF.
 
 # Mengen, Relationen und Funtionen
 
